@@ -27,3 +27,7 @@ user_pref("media.gpu-process-decoder", true);
 user_pref("layers.gpu-process.enabled", true);
 user_pref("media.ffmpeg.vaapi.enabled", true);
 user_pref("media.ffmpeg.dmabuf-textures.enabled", true);
+
+//Persist logins
+user_pref("privacy.clearOnShutdown.offlineApps", false);
+user_pref("privacy.cpd.offlineApps", false);
