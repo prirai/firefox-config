@@ -52,6 +52,8 @@ user_pref("browser.ssl_override_behavior", 1);
 user_pref("browser.startup.blankWindow", false);
 user_pref("browser.startup.homepage_override.mstone", "ignore"); // master switch
 user_pref("browser.tabs.crashReporting.sendReport", false); // [FF44+]
+user_pref("browser.theme.dark-private-windows", false);
+user_pref("browser.uidensity", 0);
 user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
 user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0);
@@ -189,8 +191,11 @@ user_pref("security.tls.version.enable-deprecated", false); // [DEFAULT: false]
 user_pref("signon.autofillForms", false);
 user_pref("signon.formlessCapture.enabled", false);
 
+user_pref("svg.context-properties.content.enabled", true);
+
 user_pref("toolkit.coverage.endpoint.base", "");
 user_pref("toolkit.coverage.opt-out", true); // [FF64+] [HIDDEN PREF]
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("toolkit.telemetry.archive.enabled", false);
 user_pref("toolkit.telemetry.bhrPing.enabled", false); // [FF57+] Background Hang Reporter
 user_pref("toolkit.telemetry.coverage.opt-out", true); // [HIDDEN PREF]
@@ -208,3 +213,4 @@ user_pref("webchannel.allowObject.urlWhitelist", "");
 user_pref("webgl.disabled", true);
 
 user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true]
+
