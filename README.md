@@ -3,6 +3,8 @@ Firefox configs for security, privacy, usability and performance
 
 Install UBlock Origin, Sponsorblock and Containers (eg. Google container, facebook container).
 
+![](display-ui.png)
+
 ## Change user js
 
 You can make firefox suited to your needs and for the maximum security, privacy, usability and performance without very much tweaking by changing the user js in your browser profile.
