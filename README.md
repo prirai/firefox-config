@@ -11,8 +11,8 @@ Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%
 
 The following steps are required to initialize or update a Firefox profile.
 
-- Create a new Firefox profile
-- Copy `prefsCleaner.bat` (Windows) / `prefsCleaner.sh` (Linux) to profile's Root Directory
-- Copy `updater.bat` (Windows) / `updater.sh` (Linux) to profile's Root Directory
-- Copy `user-overrides.js` to profile's Root Directory
-- Execute updater script
+- Create a new Firefox profile or use an existing one and move to the profile directory. You can navigate to `about:profiles` and find the location for your current profile's root directory as well as find the option to create a new profile. If you want to try this out, you can go with creating a new profile, try it out and make changes and finally delete it make the required changes in your original profile.
+- For changing some prefs you can create a new file in profile's Root Directory, `user-overrides.js` and fill it with the prefs you want to override.
+- Done! Happy browsing.
+
+If you really liked the project, star it and also contribute back.
