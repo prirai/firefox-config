@@ -15,4 +15,8 @@ The following steps are required to initialize or update a Firefox profile.
 - For changing some prefs you can create a new file in profile's Root Directory, `user-overrides.js` and fill it with the prefs you want to override.
 - Done! Happy browsing.
 
+## Custom Theme - Firefox Gnome
+
+- If you also want to change the appearance of Firefox to give it a look of GTK4+ gnome, you can simple copy the chrome folder and paste it to your profile root directory.
+
 If you really liked the project, star it and also contribute back.
