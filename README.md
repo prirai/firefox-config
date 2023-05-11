@@ -20,7 +20,7 @@ Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%
 
 ## Custom Theme - Firefox Gnome
 
-- If you also want to change the appearance of Firefox to give it a look of GTK4+ gnome, you can simple copy the chrome folder and paste it to your profile root directory.
+- If you also want to change the appearance of Firefox to give it a look of GTK4+ gnome, you can try searching for some userchrome projects on GitHub or elsewhere and give them a try.
 
 If you really liked the project, star it and also contribute back.
 
