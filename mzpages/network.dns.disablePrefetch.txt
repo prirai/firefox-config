@@ -1,0 +1,27 @@
+{{preference|pref=network.dns.disablePrefetch}}
+
+==Background==
+DNS prefetching was implemented in Firefox 3.5 to improve page load time.  This feature allows Firefox to perform domain name resolution proactively and in parallel for hyperlinks, images, CSS,  JavaScript, and other webpage content.  [http://bitsup.blogspot.com/2008/11/dns-prefetching-for-firefox.html] [https://developer.mozilla.org/En/Controlling_DNS_prefetching]  Note: To disable DNS prefetching using [[about:config]] you will need to add  '''network.dns.disablePrefetch''' as a new boolean preference and set the value to '''true'''.
+
+==Possible values and their effects==
+===True===
+Disable DNS prefetching
+===False===
+Perform DNS prefetching (Default)
+
+==First checked in==
+[http://hg.mozilla.org/mozilla-central/rev/0496b58bb9f8 Nov 07 2008 by Patrick McManus]
+
+==Has an effect in==
+* Mozilla Firefox (nightly builds since 2008-11-07; 3.1b2 and above)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=453403 Bug 453403 - add DNS pre-fetching to Necko and Firefox] 
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=475603  Bug 475603 -  Lots of timeouts for DNS requests with Netgear Router WGR614]
+
+==External links==
+*[https://developer.mozilla.org/En/Controlling_DNS_prefetching DNS prefetching (MDC)]
+*[http://bitsup.blogspot.com/2008/11/dns-prefetching-for-firefox.html Bits Up!: DNS Prefetching for Firefox]
+*[http://dev.chromium.org/developers/design-documents/dns-prefetching DNS Prefetching (The Chromium Projects)]
+
+[[Category:Preferences]]

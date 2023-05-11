@@ -1,0 +1,33 @@
+{{preference|pref=browser.sessionstore.privacy_level}}
+
+==Background==
+Firefox 2.0 introduces a built-in [[Session Restore]] feature, allowing the user to continue browsing from where they left off if browser restarts. This preference controls when to store extra information about a session: contents of forms, scrollbar positions, cookies, and POST data.
+
+==Possible values and their effects==
+===0===
+Store extra session data for any site. (Default starting with Firefox 4.)
+===1===
+Store extra session data for unencrypted (non-HTTPS) sites only. (Default before Firefox 4.)
+===2===
+Never store extra session data.
+
+==First checked in==
+* [http://bonsai.mozilla.org/cvsview2.cgi?command=DIFF&subdir=mozilla%2Fbrowser%2Fcomponents%2Fsessionstore%2Fsrc&file=nsSessionStore.js&rev1=1.1&rev2=1.1&whitespace_mode=show&diff_mode=full 2006-04-26 by Mike Connor]
+
+==Has an effect in==
+* Mozilla Firefox (nightly builds since 2006-04-26; 2.0)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=328159 Bug 328159 - Wire up the Session-data Service]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=424872 Bug 424872 - Support form restore for securely transmitted site (HTTPS)] - changed the default for Firefox 4.
+
+==Related preferences==
+* [[browser.sessionstore.postdata]]
+* [[browser.sessionstore.privacy_level_deferred]] (new in Firefox 4) - controls what gets saved by [[Session Restore]] when quitting (not crashing or restarting to install updates/addons) with [[browser.startup.page]] *not* set to restore previous session on startup. The possible values for this preference are the same as described on this page, but the default is '1' (session data stored for non-HTTPS pages only). See also: [http://blog.zpao.com/post/1099464627/restore-previous-session zpao's blog post] (note that the information about the default values in that post is outdated) and [https://bugzilla.mozilla.org/show_bug.cgi?id=627472#c5 this bugzilla comment].
+
+==External links==
+* [http://wiki.mozilla.org/Session_Restore Session Restore - MozillaWiki]
+
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

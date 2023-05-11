@@ -1,0 +1,34 @@
+{{preference|pref=middlemouse.contentLoadURL}}
+
+==Background==
+This preference determines how to handle middle clicks in the content area. It was split off from [[middlemouse.paste]], which now handles middle clicks in text fields only.
+
+==Possible values and their effects==
+===True===
+Load the contents of the clipboard as a URL. (Default for Linux/Unix.)
+===False===
+Handle middle-clicks normally. (Default for all but Linux/Unix.)
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=contentAreaClick.js&branch=&root=/cvsroot&subdir=mozilla/xpfe/communicator/resources/content&command=DIFF_FRAMESET&rev1=1.3&rev2=1.4 2001-01-10 by Akkana Peck.]
+
+==Has an effect in==
+* Netscape (all versions since 6.1)
+* Mozilla Suite (all versions since 0.7)
+* Mozilla Phoenix (all versions)
+* Mozilla Firebird (all versions)
+* Mozilla Firefox (all versions)
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=135884 Bug 135884 - Middleclick on browser content area loads clipboard as URL]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=216899 Bug 216899 - middle-clicking functions ContentLoadURL and autoscroll conflict] (fixed)
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=284379 Bug 284379 - Enabling middlemouse.contentLoadURL and middle clicking a tab should still close tab] (fixed)
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=57317 Bug 57317 - Middle button on blank area opens clipboard contents as URL in current window] (fixed)
+
+==Related preferences==
+* [[middlemouse.openNewWindow]]
+* [[middlemouse.paste]]
+* [[middlemouse.scrollbarPosition]]
+
+[[Category:Preferences]]

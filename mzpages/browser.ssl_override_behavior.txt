@@ -1,0 +1,32 @@
+{{preference|pref=browser.ssl_override_behavior}}
+
+==Background==
+In Firefox 3, SSL certificate errors are displayed in the browser as error pages. Users may choose to override the errors, ignoring problems with the certificate’s validation, and the override options are displayed in the error page. This preference determines how easily the user may override the errors by specifying whether the browser pre-populates the exception URL and/or downloads the certificate.
+
+==Possible values and their effects==
+===0===
+Do not pre-populate the current URL as an exception and do not pre-fetch the SSL certificate.
+===1===
+Pre-populate the current URL but do not pre-fetch the certificate. (Default)
+===2===
+Pre-populate the current URL and pre-fetch the certificate.
+
+==Caveats==
+* [[browser.xul.error_pages.enabled]] must be true for this preference to have an effect.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=browser.js&branch=&root=/cvsroot&subdir=mozilla/browser/base/content&command=DIFF_FRAMESET&rev1=1.898&rev2=1.899 2007-11-23 by Johnathan Nightingale]
+
+==Has an effect in==
+* Mozilla Firefox (nightly builds since 2007-11-23)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=402207 Bug 402207 - SSL error page "Add Exception" support should be pref-controlled]
+
+==Related preferences==
+* [[browser.xul.error_pages.enabled]]
+
+==External links==
+* [http://blog.johnath.com/index.php/2007/11/23/security-tidbits/ meandering wildly - Security Tidbits (Johnathan Nightingale's blog)]
+
+[[Category:Preferences]]

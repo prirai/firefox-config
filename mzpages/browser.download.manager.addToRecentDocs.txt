@@ -1,0 +1,23 @@
+{{preference|pref=browser.download.manager.addToRecentDocs}}
+
+==Background==
+When downloading files through the Download Manager under Windows, Mozilla will add the downloaded file to the "Recent Documents" folder (normally accessible under the Start Menu). This preference allows users to enable or disable this feature.
+
+==Possible values and their effects==
+===True===
+Add downloaded files to the Recent Documents list under Windows. (Default)
+===False===
+Do not add downloaded files to Recent Documents.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsDownloadManager.cpp&branch=&root=/cvsroot&subdir=mozilla/toolkit/components/downloads/src&command=DIFF_FRAMESET&rev1=1.66&rev2=1.67 2006-07-02 by Gavin Sharp]
+
+==Has an effect in==
+* Mozilla Firefox (all versions since 2.0, Windows-only)
+* SeaMonkey 2.0b1 and newer (Windows-only)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=310071 Bug 310071 - Use system calls to add files to the recent documents folder]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=398174 Bug 398174 - browser.download.manager.addToRecentDocs is not set by default]
+
+[[Category:Preferences]]

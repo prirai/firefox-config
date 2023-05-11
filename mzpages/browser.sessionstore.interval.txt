@@ -1,0 +1,34 @@
+{{preference|pref=browser.sessionstore.interval}}
+
+==Background==
+Firefox 2.0 introduces a built-in [[Session Restore]] feature, allowing the user to continue browsing from where they left off if browser restarts. This preference controls how often information about the current session is saved to the profile.
+
+==Possible values and their effects==
+A positive integer indicating the number of milliseconds between session saving operations. (Default is 15000, or 15 seconds; in Firefox 3.x: 10 seconds)
+
+==Caveats==
+* [[browser.sessionstore.enabled]] must be true for this preference to have an effect.
+
+==First checked in==
+* [http://bonsai.mozilla.org/cvsview2.cgi?command=DIFF&subdir=mozilla%2Fbrowser%2Fcomponents%2Fsessionstore%2Fsrc&file=nsSessionStore.js&rev1=1.1&rev2=1.1&whitespace_mode=show&diff_mode=full 2006-04-26 by Mike Connor]
+
+==Has an effect in==
+* Mozilla Firefox (nightly builds since 2006-04-26; 2.0)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=328154 Bug 328154 - Restore User's Session on App Launch]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=328159 Bug 328159 - Wire up the Session-data Service]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=535408 Bug 535408 – Increase Sessionstore interval to 15s]
+
+==Related preferences==
+* [[browser.sessionstore.enabled]]
+* [[browser.sessionstore.max_tabs_undo]]
+* [[browser.sessionstore.max_windows_undo]]
+* [[browser.sessionstore.resume_from_crash]]
+* [[browser.sessionstore.resume_session]]
+* [[browser.sessionstore.resume_session_once]]
+
+==External links==
+* [http://wiki.mozilla.org/Session_Restore Session Restore - MozillaWiki]
+
+[[Category:Preferences]]

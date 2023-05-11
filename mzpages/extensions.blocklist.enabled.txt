@@ -1,0 +1,34 @@
+{{preference|pref=extensions.blocklist.enabled}}
+
+==Background==
+This preference determines whether or not Mozilla applications will [[extensions.blocklist.interval|periodically]] retrieve a blocklist from the server specified in [[extensions.blocklist.url]].  
+
+While Mozilla’s add-on system is a powerful feature, it can also be a vector for malware. Starting with Firefox 2.0, specific extensions can be blocklisted from a central server (by default, addons.mozilla.org).  In current versions, the blocklist is not only used for malicious extensions but also to disable vulnerable plugins & crash-prone graphic drivers.   The information retrieved from the blocklist is stored in the file [[blocklist.xml]].  A current list of blocked add-ons can be viewed [https://addons.mozilla.org/firefox/blocked/ here.]
+
+
+==Possible values and their effects==
+===True===
+Enable the blocklist. Retrieve the list from the server specified in [[extensions.blocklist.url]] at the interval specified in [[extensions.blocklist.interval]]. If blocklisted extensions or plugins are already installed, disable them, and prevent blocklisted extensions from being installed in the future. (Default)
+
+===False===
+Do not retrieve a blocklist and do not restrict extension installation.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsExtensionManager.js.in&branch=&root=/cvsroot&subdir=mozilla/toolkit/mozapps/extensions/src&command=DIFF_FRAMESET&rev1=1.182&rev2=1.183 2006-03-08 by Robert Strong]
+
+==Has an effect in==
+* Mozilla Firefox (trunk builds after 2006-03-08; 2.0)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=271166 Bug 271166 - Should be able to blacklist extensions centrally, in update.mozilla.org]
+
+==Related preferences==
+* [[extensions.blocklist.detailsURL]]
+* [[extensions.blocklist.interval]]
+* [[extensions.blocklist.url]]
+
+==External links==
+* [http://wiki.mozilla.org/Extension_Blocklisting:User_Interface Extension Blocklisting:User Interface]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

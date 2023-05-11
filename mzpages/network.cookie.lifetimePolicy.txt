@@ -1,0 +1,46 @@
+{{preference|pref=network.cookie.lifetimePolicy}}
+
+==Background==
+This preference controls when [[cookies]] expire.
+
+==Possible values and their effects==
+===0===
+The cookie's lifetime is supplied by the server. (Default)
+===1===
+The user is prompted for the cookie's lifetime.
+===2===
+The cookie expires at the end of the session (when the browser closes).
+===3===
+The cookie lasts for the number of days specified by [[network.cookie.lifetime.days]].
+
+==Caveats==
+* Shortening cookies' lifetimes may require you to re-log in to sites more than usual.
+
+==UI==
+===Firefox===
+[[Menu differences in Windows, Linux, and Mac|Tools -> Options]] -> Privacy / Cookies -> Keep Until: (''Firefox 2 and above'') <br>
+Tools -> Options -> Privacy -> Cookies -> Keep Cookies: (''Firefox 1.5'')<br>
+(Value 3 isn't provided by this interface.)
+
+===Mozilla Suite and SeaMonkey===
+[[Menu differences in Windows, Linux, and Mac|Edit -> Preferences]] -> Privacy & Security -> Cookies / Cookie Retention Policy
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&root=/cvsroot&subdir=mozilla/extensions/cookie&command=DIFF_FRAMESET&file=nsCookiePermission.cpp&rev2=1.16&rev1=1.15 2004-03-09 by Mike Connor]
+
+==Has an effect in==
+* Netscape (all versions since 7.2)
+* Mozilla Suite (all versions since 1.7a)
+* Mozilla Firefox (all versions since 0.9)
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=233339 Bug 233339 - rewrite CanSetCookie to reflect what dialogs now do]
+
+==Related preferences==
+* [[network.cookie.alwaysAcceptSessionCookies]]
+* [[network.cookie.thirdparty.sessionOnly]]
+* [[network.cookie.lifetime.days]]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

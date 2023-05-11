@@ -1,0 +1,44 @@
+{{preference|pref=keyword.enabled}}
+
+==Background==
+When entering information in the [[:Category:Location Bar|Location Bar]], Mozilla attempts to convert the information into a usable URI. For example, &ldquo;<tt>mozilla.org</tt>&rdquo; is automatically converted to &ldquo;<tt>http://mozilla.org/</tt>&rdquo;. When Mozilla is unable to discern what URL the user wanted, the information that was entered may be submitted to an Internet Keywords service. This preference determines whether or not to use Internet Keywords.
+
+==Possible values and their effects==
+===True===
+If Mozilla cannot determine a URL from information entered in the [[:Category:Location Bar|Location Bar]], append the information to the URL in [[keyword.URL]] and redirect the user there. (Default)
+
+===False===
+Display an error message indicating the entered information is not a valid URL.
+
+==Caveats==
+* This preference only has an effect when [[keyword.URL]] is a valid URL.
+* Setting this preference to true does mean that information will be sent to a third party (or whatever URL is specified in [[keyword.URL]]) without prompting. This has possible privacy implications, though no more serious than accidentally submitting a search to Google.
+* Certain proxy servers&mdash;most notably, [http://wp.netscape.com/proxy/v3.5/ Netscape Proxy Server]&mdash;implement domain guessing that prevents Internet Keywords from working. In other words, entering &ldquo;<tt>mozilla</tt>&rdquo; into the [[:Category:Location Bar|Location Bar]] may direct you to http://www.mozilla.com/ automatically instead of submitting the entered term to the [[keyword.URL|Internet Keywords URL]].
+* Malformed URIs&mdash;such as &ldquo;<tt>http//www.example.com/</tt>&rdquo;&mdash;cannot be resolved by Mozilla&rsquo;s built-in URL fix-up routines, and will be sent to the Internet Keywords service if this preference is true.
+* Even when this preference is set to false, the Internet Keywords service can still be accessed via the <tt>keyword:</tt> URI scheme. For example, typing <tt>keyword:foo</tt> in the Location Bar will navigate to the URL in [[keyword.URL]] with <tt>foo</tt> appended.
+
+==UI==
+===Mozilla Suite===
+A checkbox labeled &ldquo;Enable Internet Keywords&rdquo; is available under &ldquo;Edit &rarr; Preferences &rarr; Navigator &rarr; Smart Browsing &rarr; Internet Keywords&rdquo;.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsKeywordProtocolHandler.cpp&branch=&root=/cvsroot&subdir=mozilla/netwerk/protocol/keyword/src&command=DIFF_FRAMESET&rev1=1.7&rev2=1.8 1999-11-10 by Judson Valeski]
+
+==Has an effect in==
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=2875 Bug 2875 - Proxy: map HTTP 500 errors to necko errors (so Internet Keywords and Domain Guessing would work)]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=100412 Bug 100412 - Internet Keywords should be off in Mozilla by default]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=172389 Bug 172389 - keyword: URL displayed after using Internet Keywords]
+
+==Related preferences==
+* [[keyword.URL]]
+
+==See also==
+* [[Location Bar Search]]
+
+==External links==
+* [http://www.mozilla.org/docs/end-user/internet-keywords.html Internet Keywords]
+* [http://wp.netscape.com/escapes/keywords/faq.html Netscape Internet Keywords FAQ]
+
+[[Category:Preferences]]
+[[Category:Location Bar]]

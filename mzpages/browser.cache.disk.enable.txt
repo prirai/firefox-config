@@ -1,0 +1,37 @@
+{{preference|pref=browser.cache.disk.enable}}
+
+==Background==
+When a page is loaded, it can be cached so it doesn't need to be downloaded to be redisplayed. For e-mail and news, messages and attachments are cached as well. This preference controls whether to use the hard drive for caching purposes. [[browser.cache.disk.capacity]] controls the maximum amount of disk space to use.
+
+==Possible values and their effects==
+===true===
+Store cache on the hard drive. (Default)
+===false===
+Don't store cache on the hard drive.
+
+==First checked in==
+Present since at least 2000-10-30. Exact checkin date unknown. <!--https://bugzilla.mozilla.org/show_bug.cgi?id=58510 is the earliest reference i can find-->
+
+==Has an effect in==
+* Netscape (all versions since 6.0)
+* Mozilla Suite (all versions since 0.6)
+* Phoenix (all versions)
+* Firebird (all versions)
+* Firefox (all versions)
+* Thunderbird (all versions)
+* Minimo (all versions)
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=68705 Bug 68705 - Implement new cache design]
+
+==Related preferences==
+* [[browser.cache.check_doc_frequency]]
+* [[browser.cache.disk.capacity]]
+* [[browser.cache.disk_cache_ssl]]
+* [[browser.cache.memory.enable]]
+* [[network.http.use-cache]]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]
+[[Category:Preferences (Thunderbird)]]

@@ -1,0 +1,31 @@
+{{preference|pref=browser.xul.error_pages.expert_bad_cert}}
+
+==Background==
+Firefox 3 comes with [http://blog.ivanristic.com/2008/04/firefox-3-ssl-i.html new invalid SSL certificate handling behavior], aimed at making it harder to accidentally or unconsciously accept a bad certificate. While benefiting the novice-to-intermediate user in terms of security, it can be a hindrance to advanced users who frequently encounter self-signed certificates. This preference enables some extra UI on the SSL error page that makes it easier to accept an invalid certificate.
+
+==Possible values and their effects==
+===True===
+Unhide the “add exception” button on the SSL error page, allowing users to directly accept a bad certificate.
+===False===
+Hide the advanced UI, requiring users to click through explanatory dialogs before adding an exception. (Default)
+
+==Recommended settings==
+In most cases, this preference should be left as '''true'''. Only change it if you are familiar both with how SSL certificates work and the sites you plan to add as exceptions.
+
+If you set this preference to '''false''', you may also want to set [[browser.ssl_override_behavior]] to '''2''' to pre-fetch the certificate.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsDocShell.cpp&branch=&root=/cvsroot&subdir=mozilla/docshell/base&command=DIFF_FRAMESET&rev1=1.899&rev2=1.900 2008-05-02 by Daniel Veditz]
+
+==Has an effect in==
+* Firefox (nightly builds since 2008-05-02)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=427293 Bug 427293 - "Secure Connection Failed" makes it difficult to work in the web hosting industry]
+
+==Related preferences==
+* [[browser.ssl_override_behavior]]
+* [[browser.xul.error_pages.enabled]]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

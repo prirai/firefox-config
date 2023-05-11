@@ -1,0 +1,24 @@
+{{preference|pref=browser.startup.homepage_override.mstone}}
+
+==Background==
+When a user starts up their browser, this preference is examined. If its value differs from the browser’s current milestone, then the user is redirected to the homepage specified in [[startup.homepage_override_url]] and this preference’s value is updated to the current milestone.
+
+==Possible values and their effects==
+The browser’s milestone (e.g., “rv:1.8.1.1”) from the last successful startup of the browser. If it differs from the browser’s actual milestone, it is assumed an upgrade has occurred, and the user is redirected to the [[startup.homepage_override_url|homepage override URL]]. If its value is “ignore”, then the redirect does not occur and the preference is not updated.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsBrowserInstance.cpp&branch=&root=/cvsroot&subdir=mozilla/xpfe/browser/src&command=DIFF_FRAMESET&rev1=1.211&rev2=1.212 2001-08-31 by Samir Gehani]
+
+==Has an effect in==
+* Mozilla Suite (all versions since 0.9.4)
+* Mozilla Firefox (all versions)
+* SeaMonkey
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=97220 Bug 97220 - Add Run Once function on startup]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=102313 Bug 102313 - milestone home page override is very annoying - browser.startup_homepage_override]
+
+==Related preferences==
+* [[startup.homepage_override_url]]
+
+[[Category:Preferences]]

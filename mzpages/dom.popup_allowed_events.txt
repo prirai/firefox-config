@@ -1,0 +1,36 @@
+{{preference|pref=dom.popup_allowed_events}}
+
+==Background==
+To distinguish between wanted pop-ups and unwanted pop-ups, Mozilla applications maintain a list of events that can legitimately spawn pop-ups. This preference is that list.
+
+==Possible values and their effects==
+A space-separated list of events that can spawn pop-ups. See [https://dxr.mozilla.org/mozilla/search?q=sEventNames%5B&amp;redirect=false here] for a list of all possible events. (Default: change click dblclick mouseup pointerup notificationclick reset submit touchend).
+
+==Caveats==
+* Removing entries from this list may block legitimate pop-ups; adding entries to this list may allow unwanted pop-ups.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsGlobalWindow.cpp&branch=1.848&root=/cvsroot&subdir=mozilla/dom/src/base&command=DIFF_FRAMESET&rev1=1.635&rev2=1.636 2004-02-02 by Dan M]
+
+==Has an effect in==
+* Netscape (all versions since 7.2)
+* Mozilla Suite (all versions since 1.7a)
+* Mozilla Firefox (all versions since 0.8)
+* SeaMonkey (all versions)
+
+=See also=
+[[Pop-ups not blocked]]
+
+==Related preferences==
+* [[dom.popup_maximum]]
+* [[privacy.popups.disable_from_plugins]]
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=197919 Bug 197919 - Non Mouse Click & Max Number of Popups Exceptions]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=252326 Bug 252326 - aol.com opens popup window by appending a script element]
+
+==External links==
+* [http://www.gozer.org/mozilla/extensions/ Popup Blocker Settings]
+* [http://www.patheticcockroach.com/mpam4/index.php?p=64 Yes popups]
+
+[[Category:Preferences]]

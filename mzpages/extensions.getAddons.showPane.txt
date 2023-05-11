@@ -1,0 +1,33 @@
+{{preference|pref=extensions.getAddons.showPane}}
+
+==Background==
+Firefox 3’s Add-ons dialog integrates with addons.mozilla.org to allow users to search and install extensions and themes. The functionality is available in the “Get Add-ons” pane. This preference allows the user to hide that pane.
+
+==Possible values and their effects==
+===True===
+Show the “Get Add-ons” pane in the Add-ons dialog (Default)
+===False===
+Hide the pane in the Add-ons dialog
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=extensions.js&branch=&root=/cvsroot&subdir=mozilla/toolkit/mozapps/extensions/content&command=DIFF_FRAMESET&rev1=1.155&rev2=1.156 2008-01-28 by Dave Townsend]
+
+==Has an effect in==
+* Firefox (nightly builds since 2008-01-28)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=404024 Bug 404024 - Add AMO integration pane]
+
+==Related preferences==
+* [[extensions.getAddons.browseAddons]]
+* [[extensions.getAddons.maxResults]]
+* [[extensions.getAddons.recommended.browseURL]]
+* [[extensions.getAddons.recommended.url]]
+* [[extensions.getAddons.repository]]
+* [[extensions.getAddons.search.browseURL]]
+* [[extensions.getAddons.search.url]]
+
+==External links==
+* [http://madhava.com/egotism/archive/005011.html Adding on add-ons (Madhava Enros’s blog)]
+
+[[Category:Preferences]]

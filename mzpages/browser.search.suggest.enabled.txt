@@ -1,0 +1,24 @@
+{{preference|pref=browser.search.suggest.enabled}}
+
+==Background==
+In Firefox 2.0, search plugins can offer “search suggestions” of similar search queries as the user enters a query in the [[search bar]]. This preference controls whether or not search suggestions are enabled.
+
+==Possible values and their effects==
+===True===
+Retrieve and display search term suggestions for search plugins that support it. (Default)
+===False===
+Disable search suggestions.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsSearchSuggestions.js&branch=&root=/cvsroot&subdir=mozilla/browser/components/search&command=DIFF_FRAMESET&rev1=1.6&rev2=1.7 2006-07-20 by Pam Greene]
+
+==Has an effect in==
+* Mozilla Firefox (nightly builds since 2006-07-20; 2.0)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=337491 Bug 337491 - Allow to disable search suggestions and revert to traditional form history autocomplete]
+
+==External links==
+* [http://developer.mozilla.org/en/docs/Supporting_search_suggestions_in_search_plugins Supporting search suggestions in search plugins] (Mozilla Development Center)
+
+[[Category:Preferences]]

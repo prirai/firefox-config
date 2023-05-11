@@ -1,0 +1,28 @@
+{{preference|pref=browser.link.open_newwindow}}
+
+==Background==
+Some web sites choose to open certain links in new windows. This preference lets you control where to open these links, that would normally open new windows. You can use [[browser.link.open_newwindow.restriction]] to fine tune which links will be affected by this preference.
+
+==Possible values and their effects==
+===1===
+Open links, that would normally open in a new window, in the current tab/window.
+===2===
+Open links, that would normally open in a new window, in a new window (Default in Firefox 1.5 and older).
+===3===
+Open links, that would normally open in a new window, in a new tab in the current window (Default in Firefox 2.0 and newer).
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&subdir=mozilla/dom/src/base&command=DIFF_FRAMESET&file=nsGlobalWindow.cpp&rev1=1.652.2.2.2.18&rev2=1.652.2.2.2.19&root=/cvsroot 2004-10-03 by Dan Matejka]
+
+==Has an effect in==
+* Mozilla Firefox (all versions since 1.0)
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=172962 Bug 172962 - Options for where to open URLs from other applications (reuse tab, new tab, new window)]
+
+==Related preferences==
+* [[browser.link.open_newwindow.restriction]]
+* [[browser.link.open_external]]
+
+[[Category:Preferences]]

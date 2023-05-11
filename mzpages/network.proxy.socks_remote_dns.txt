@@ -1,0 +1,30 @@
+{{preference|pref=Network.proxy.socks_remote_dns}}
+
+==Background==
+This preference controls whether DNS lookups for [http://en.wikipedia.org/wiki/SOCKS SOCKS] v5 clients happen on the client or on the proxy server.
+
+==Possible values and their effects==
+===true===
+Have the proxy server perform DNS lookups.
+===false===
+Perform DNS lookups on the client.
+
+==UI==
+===Mozilla Suite===
+?
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsProtocolProxyService.cpp&branch=1.70&root=/cvsroot&subdir=mozilla/netwerk/base/src&command=DIFF_FRAMESET&rev1=1.59&rev2=1.60 2005-02-01 by Darin Fisher]
+
+==Has an effect in==
+* Mozilla Suite (all versions since 1.8b1)
+* Firefox (all versions since 1.1a1 (Deer Park Alpha 1))
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=134105 Bug 134105 - SOCKS5: DNS lookups (host resolving) should occur on proxy, not client side.]
+
+==Related preferences==
+* [[network.proxy.socks_version]]
+
+[[Category:Preferences]]

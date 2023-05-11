@@ -1,0 +1,51 @@
+{{preference|pref=network.dns.disableIPv6}}
+
+==Background==
+[http://en.wikipedia.org/wiki/IPv6 IPv6] was designed in part to solve the problem IPv4 will soon be facing: the exhaustion of all possible IP addresses. Mozilla implemented IPv6 support in early 2000, but that support did not receive widespread testing until recently as IPv6-capable OSs and network software/equipment became more common.
+
+One particular bug that has appeared exists not in Mozilla, but in IPv6-capable DNS servers: an IPv4 address may be returned when an IPv6 address is requested. It is possible for Mozilla to recover from this misinformation, but a significant delay is introduced.
+
+Under certain versions of Mac OS X (those prior to 10.4), this bug is compounded by another bug wherein the OS still makes IPv6 DNS requests even if IPv6 support is disabled. A significant delay is introduced in all connections requiring DNS lookups while the OS and the DNS server exchange unnecessary (or redundant) queries and responses to resolve the address.
+
+Two approaches were taken to work around these bugs: first, a preference to globally disable IPv6-based DNS lookups browser-wide (this preference), and a blacklist of domains which should never have IPv6-based DNS lookups performed ([[network.dns.ipv4OnlyDomains]]).
+
+==Possible values and their effects==
+===True===
+Disable IPv6 DNS lookups. (Default in Mac OS X prior to 2008-01-05, OS/2)
+
+===False===
+Perform IPv6 DNS lookups on IPv6-capable OSs. (Default everywhere else)
+
+==Caveats==
+* Setting this preference to false under versions of Mac OS X prior to 10.4 can introduce significant delays in DNS lookups.
+* Setting this preference to false under any version of Mac OS X can introduce significant delays in DNS lookups, if on a network that doesn't support IPv6 routing.  ([https://bugzilla.mozilla.org/show_bug.cgi?id=417689 bug 417689]) 
+* Setting this preference to false under OS/2 can cause DNS lookups to fail altogether.
+
+==Recommended settings==
+If your OS or ISP does not support IPv6, there is no reason to have this preference set to false. Some suggest that setting this preference to true on any OS will speed up connections, though this is probably a placebo effect.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsDNSService2.cpp&branch=&root=/cvsroot&subdir=mozilla/netwerk/dns/src&command=DIFF_FRAMESET&rev1=1.4&rev2=1.5 2004-03-09 by Darin Fisher]
+
+==Has an effect in==
+* Mozilla Firefox (all versions since 0.9)
+* Mozilla Suite (all versions since 1.7 Beta)
+* SeaMonkey (all versions)
+* Camino (all versions since 0.8)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=23811 Bug 23811 - Support IPv6]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=68796 Bug 68796 - IPv6: Some IPv4 addresses won&rsquo;t resolve w/IPv6 OS]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=231607 Bug 231607 - DNS delays for people with IPv6-buggy local DNS servers]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=300302 Bug 300302 - network.dns.disableIPv6 should be set to true by default (at least on OS/2)]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=408881 Bug 408881 - Re-enable IPv6 on Mac OS]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=414197 Bug 414197 -  "Server not found" (DNS/name resolution/lookup failure) when using 32bit Firefox on Ubuntu 64bit - lib32nss-mdns package missing]
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=417689  Bug 417689 -  firefox 3b3: very slow dns lookups] (Mac OS X)
+
+==Related preferences==
+* [[network.dns.ipv4OnlyDomains]]
+
+==External links==
+* [http://en.wikipedia.org/wiki/IPv6 IPv6 - Wikipedia]
+
+[[Category:Preferences]]

@@ -1,0 +1,50 @@
+{{preference|pref=browser.link.open_newwindow.restriction}}
+
+==Background==
+Some web sites choose to open certain links in new windows. However, many users prefer using tabs to multiple browser windows. This preference allows for fine-tuning of [[browser.link.open_newwindow]].
+
+Oftentimes when a new window is opened from JavaScript, it&rsquo;s a small popup without all of a usual browser window&rsquo;s features&mdash;e.g., the back/forward/reload buttons are hidden, the status bar is hidden, the size is purposely smaller, etc. Usually in this situation, the window is designed specifically as a popup, and opening it in a tab actually makes it less useful. This preference can let these types of links open as new windows while opening all other types as new tabs.
+
+==Possible values and their effects==
+===0===
+Divert all links according to [[browser.link.open_newwindow]]. (Default in Firefox 1.0.x and SeaMonkey 1.0 to 2.1a2)
+
+This includes:
+* All HTML links with <code>target="_blank"</code>.
+* All JavaScript calls to <code>[http://developer.mozilla.org/en/docs/window.open window.open()]</code>.
+
+===1===
+Do not divert any links ([[browser.link.open_newwindow]] will have no effect).
+
+===2===
+Divert all links according to [[browser.link.open_newwindow]], ''unless'' the new window specifies how it should be displayed. (Default in Firefox 1.5 and later, in SeaMonkey 2.1a3 and later, and Camino 1.5)
+
+This includes:
+* All links with <code>target="_blank"</code>.
+* JavaScript calls to <code>[http://developer.mozilla.org/en/docs/window.open window.open()]</code> without the "features" parameter (3rd parameter).
+This does ''not'' include:
+* JavaScript calls to <code>[http://developer.mozilla.org/en/docs/window.open window.open()]</code> with the "features" parameter (3rd parameter).
+
+==First checked in==
+* [http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&subdir=mozilla/dom/src/base&command=DIFF_FRAMESET&file=nsGlobalWindow.cpp&rev1=1.652.2.2.2.18&rev2=1.652.2.2.2.19&root=/cvsroot 2004-10-03 by Daniel Matejka]
+
+==Has an effect in==
+* Mozilla Firefox (all versions since 1.0RC1)
+* SeaMonkey (all versions)
+* Camino (1.1a1 and newer) 
+
+==Related bugs==
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=55696 Bug 55696 – Open a JavaScript link in a new window (or new tab)]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=172962 Bug 172962 – Options for where to open URLs from other applications (reuse tab, new tab, new window)]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=266299 Bug 266299 – browser.link.open_newwindow.restriction should have a default value of 2l]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=313300 Bug 313300 – change default for browser.link.open_newwindow.restriction to &ldquo;2&rdquo; (don&rsquo;t divert window.open w/features)]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=379055 Bug 379055 – Pref UI for browser.link.open_newwindow.restriction]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=274143 Bug 274143 – Fix "single-window mode" prefs]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=338777 Bug 338777 – Single Window Mode: allow javascript windows with size assigned to open as a new window]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=348423 Bug 348423 – Camino fails to honor the pref for redirecting window.open links]
+*[https://bugzilla.mozilla.org/show_bug.cgi?id=348423 Bug 505311 – SeaMonkey should default to tabbed browsing]
+
+==Related preferences==
+* [[browser.link.open_newwindow]]
+
+[[Category:Preferences]]

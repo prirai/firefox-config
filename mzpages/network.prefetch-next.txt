@@ -1,0 +1,38 @@
+{{preference|pref=network.prefetch-next}}
+
+==Background==
+Link prefetching is when a webpage hints to the browser that certain pages are likely to be visited, so the browser downloads them immediately so they can be displayed immediately when the user requests it. This preference controls whether link prefetching is enabled.
+
+==Possible values and their effects==
+===true===
+Enable link prefetching. (Default)
+===false===
+Disable link prefetching.
+
+==Caveats==
+* This preference has no effect in mail clients.
+
+==UI==
+===Mozilla Suite===
+?
+
+==Recommended settings==
+* For sites that use prefetching, disabling this preference will decrease the amount of bandwidth used, but increase the time required to navigate sites.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&root=/cvsroot&subdir=mozilla/uriloader/prefetch&command=DIFF_FRAMESET&file=nsPrefetchService.cpp&rev2=1.7&rev1=1.6 2003-01-27 by Suresh]
+
+==Has an effect in==
+* Netscape (all versions since 7.1)
+* Mozilla Suite (all versions since 1.3)
+* Firefox (all versions since 0.6)
+* SeaMonkey (all versions)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=166648 Bug 166648 - Prefs: link prefetching UI for (network.prefetch-next)]
+
+==External links==
+* [http://www.mozilla.org/projects/netlib/Link_Prefetching_FAQ.html Link Prefetching FAQ]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

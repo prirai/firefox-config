@@ -1,0 +1,43 @@
+{{preference|pref=network.IDN_show_punycode}}
+
+==Background==
+[http://en.wikipedia.org/wiki/Internationalized_domain_name IDN support] allows users to enter domain names containing extended characters that aren&rsquo;t supported in &ldquo;standard&rdquo; URLs. This makes it possible for international websites to register domain names using characters native to local languages.
+
+In order to expand the number of characters allowable in domain names to include all Unicode characters, a type of encoding called &ldquo;[http://en.wikipedia.org/wiki/Punycode Punycode]&rdquo; was developed. This encoding uses legal characters in domain names&mdash;dashes, letters, and numbers&mdash;to represent Unicode characters. When IDN support is [[network.enableIDN|enabled]], Mozilla recognizes domain names encoded this way and converts them into Unicode strings. Thus, a domain name that looks like <tt>http://xn--tdali-d8a8w.lv/</tt> is converted into a domain name that looks like <tt>http://tūdaliņ.lv</tt>.
+
+Mozilla&rsquo;s initial response to [http://www.mozilla.org/security/announce/mfsa2005-29.html phishing attacks using IDNs] (after disabling IDNs entirely)  was to display the punycode form of IDN URLs.
+
+This preference determines whether all IDNs displayed in the browser are displayed as punycode or as Unicode.
+
+==Possible values and their effects==
+===True===
+Display the &ldquo;raw&rdquo;, punycode version of internationalized domain names.
+===False===
+Display IDNs as intended. (Default)
+
+==Caveats==
+* IDN must be [[network.enableIDN|enabled]] for this preference to have an effect.
+* Even if this preference is false, only top-level domain that are [[network.IDN.whitelist.*|whitelisted]] will be displayed in Unicode.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsIDNService.cpp&branch=&root=/cvsroot&subdir=mozilla/netwerk/dns/src&command=DIFF_FRAMESET&rev1=1.23&rev2=1.24 2005-02-17 by Darin Fisher]
+
+==Has an effect in==
+* Deer Park (all versions)
+* Mozilla Firefox (all versions since 1.5b1)
+* SeaMonkey
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=282270 Bug 282270 - Display IDN urls as punycode by default (pref controlled)]
+
+==Related preferences==
+* [[network.enableIDN]]
+* [[network.IDN.blacklist_chars]]
+* [[network.IDN.whitelist.*]]
+
+==External links==
+* [http://en.wikipedia.org/wiki/Internationalized_domain_name Internationalized domain name - Wikipedia]
+* RFC 3492 - Punycode: A bootstring encoding of Unicode for Internationalized Domain Names in Applications
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]

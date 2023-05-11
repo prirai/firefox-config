@@ -1,0 +1,36 @@
+{{preference|pref=signon.autofillForms}}
+
+==Background==
+Firefox’s [[Password Manager]] can expose usernames and passwords on websites with cross-site forms (that is, HTML forms that submit to other domains). This includes many sites that will display unsanitized user-submitted content, such as MySpace.
+
+As an initial defense against such attacks, this preference was created to prevent the Password Manager from auto-filling form fields with usernames and passwords.
+
+==Possible values and their effects==
+===True===
+Automatically fill sign-in forms with known usernames and passwords on appropriate sites. (Default)
+===False===
+Do not automatically fill sign-in forms with known usernames and passwords; instead, act as though there are multiple usernames/password pairs remembered for the form (fill password after username has been manually typed).
+
+==Recommended settings==
+If you use the Password Manager in Firefox to store your passwords, setting this preference to false will prevent the mentioned attack from succeeding.
+
+==First checked in==
+[http://bonsai.mozilla.org/cvsview2.cgi?diff_mode=context&whitespace_mode=show&file=nsPasswordManager.cpp&branch=&root=/cvsroot&subdir=mozilla/toolkit/components/passwordmgr/base&command=DIFF_FRAMESET&rev1=1.88&rev2=1.89 2006-12-01 by Mike Connor]
+
+==Has an effect in==
+* Mozilla Firefox (nightly trunk builds since 2006-12-01)
+
+==Related bugs==
+* [https://bugzilla.mozilla.org/show_bug.cgi?id=360493 Bug 360493 - Cross-Site Forms + Password Manager = Security Failure]
+
+==Related preferences==
+* [[signon.expireMasterPassword]]
+* [[signon.prefillForms]]
+* [[signon.rememberSignons]]
+* [[signon.SignonFileName]]
+
+==External links==
+* [http://secunia.com/advisories/23046/ Firefox Password Manager Information Disclosure - Advisories - Secunia]
+
+[[Category:Preferences]]
+[[Category:Security and privacy-related preferences]]
