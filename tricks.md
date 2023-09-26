@@ -46,7 +46,6 @@ for line in lines:
         print('Found')
         # Save the content only inside textarea tag
         elems = soup.select('textarea')
-        # Write the content to a file
         outfile = open(os.path.join(outfol, line + '.txt'), 'w')
         outfile.write(elems[0].getText())
         outfile.close()
