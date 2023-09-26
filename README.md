@@ -23,9 +23,9 @@ Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%
 - Matte Glow - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-matte-glow/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 - OpenSUSE - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-opensuse/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
-## Custom Theme - Firefox Gnome
+## Custom UserChrome
 
-- If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on GitHub or elsewhere and give them a try.
+- If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and give them a try.
 
 If you really liked this project, star it and also contribute back.
 
