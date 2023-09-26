@@ -1,7 +1,7 @@
 # firefox-config
 Firefox configs for security, privacy, usability and performance
 
-Install UBlock Origin, Sponsorblock and Containers (eg. Google container, facebook container).
+Install UBlock Origin, Sponsorblock, Decentraleyes and Containers (eg. Google container, facebook container).
 
 ## Change user js
 
@@ -15,6 +15,10 @@ Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%
 - Copy user.js to your profile's root directory test it out for sometime and make the required changes in your original profile.
 - For changing some prefs you can create a new file in profile's Root Directory, `user-overrides.js` and fill it with the prefs you want to override. Now, append the content at the end of `user.js` file.
 - Done! Happy browsing.
+
+## Manual Hardening
+
+Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/guide.html#firefox-1)
 
 ## Extensions for Themes
 
