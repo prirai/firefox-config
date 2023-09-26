@@ -5,7 +5,7 @@ Install UBlock Origin, Sponsorblock, Decentraleyes, PrivacyBadger and Containers
 
 ## Change user js
 
-You can make firefox suited to your needs and for the maximum security, privacy, usability and performance without very much tweaking by changing the user js in your browser profile.
+You can make firefox fully-suited to your needs and for the maximum security, privacy, usability and performance without very much tweaking by changing the user js in your browser profile.
 
 Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%APPDATA%\Mozilla\Firefox\Profiles\` in Windows.
 
