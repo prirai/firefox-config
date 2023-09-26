@@ -1,7 +1,7 @@
 # firefox-config
 Firefox configs for security, privacy, usability and performance
 
-Install UBlock Origin, Sponsorblock, Decentraleyes and Containers (eg. Google container, facebook container).
+Install UBlock Origin, Sponsorblock, Decentraleyes, PrivacyBadger and Containers (eg. Google container, facebook container).
 
 ## Change user js
 
@@ -30,6 +30,10 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 ## Custom UserChrome
 
 - If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and give them a try.
+
+## About Config Documentation
+
+Flags mentioned in the about:config are largely undocumented. Here's an effort to document most of the flags present. Intial pages are in the `mzpages` directory.
 
 If you really liked this project, star it and also contribute back.
 
