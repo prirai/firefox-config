@@ -16,7 +16,7 @@ Firefox profiles are located by default in `~/.mozilla/firefox/` in Linux and `%
 - For changing some prefs you can create a new file in profile's Root Directory, `user-overrides.js` and fill it with the prefs you want to override. Now, append the content at the end of `user.js` file. You can download from [here](https://github.com/prirai/firefox-config/raw/main/user.js).
 - Done! Happy browsing.
 
-The user.js file is taken from various other preexisting projects like arkenfox, betterfox and other projects.
+The user.js file is taken from various other preexisting projects like arkenfox, betterfox and other projects and modified to suite the needs of a normal user.
 
 ## Manual Hardening
 
