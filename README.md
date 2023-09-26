@@ -33,7 +33,7 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 
 ## About Config Documentation
 
-Flags mentioned in the about:config are largely undocumented. Here's an effort to document most of the flags present. Intial pages are in the `mzpages` directory.
+Flags mentioned in the about:config are largely undocumented. Here's an effort to document most of the flags present. Intial pages are scraped from https://kb.mozillazine.org/ and are present in the `mzpages` directory.
 
 If you really liked this project, star it and also contribute back.
 
