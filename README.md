@@ -29,7 +29,7 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 
 ## Custom UserChrome
 
-- If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and give them a try.
+- If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and giving them a try.
 
 ## About Config Documentation and other tricks
 
