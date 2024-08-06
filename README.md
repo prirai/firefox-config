@@ -32,6 +32,7 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 ## Custom UserChrome
 
 - If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and giving them a try.
+- As an example, I use - https://github.com/rafaelmardojai/firefox-gnome-theme.git along with the sidebery extension which gives a supercharged experience.
 
 ## About Config Documentation and other tricks
 
