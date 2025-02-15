@@ -1,0 +1,42 @@
+/* Find bar  */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+findbar {
+	padding: 6px !important;
+	position: relative;
+	
+	.findbar-container {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+		position: relative;
+		flex-direction: row;
+		margin: 0 !important;
+		margin-inline-end: 6px !important;
+		height: auto !important;
+
+		.findbar-textbox-wrapper {
+			order: 0;
+		}
+		.findbar-label.found-matches {
+			font-weight: normal !important;
+			order: 1;
+		}
+		.findbar-label.findbar-find-status {
+			font-weight: normal !important;
+			order: 4;
+		}
+		checkbox {
+			order: 2;
+		}
+
+		.findbar-entire-word {
+			margin-inline-end: auto !important;
+		}
+	}
+
+	.findbar-closebutton {
+		margin: 0 !important;
+	}
+}

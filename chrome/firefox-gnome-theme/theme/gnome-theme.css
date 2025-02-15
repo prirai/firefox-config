@@ -1,0 +1,47 @@
+/* Core */
+@import "parts/toolbox.css";
+@import "parts/headerbar.css";
+@import "parts/csd.css";
+@import "parts/urlbar.css";
+@import "parts/tabsbar.css";
+@import "parts/findbar.css";
+@import "parts/sidebar.css";
+@import "parts/lists.css";
+
+@import "parts/buttons.css";
+@import "parts/buttons-fixes.css";
+@import "parts/entries.css";
+@import "parts/controls.css";
+@import "parts/icons.css";
+
+@import "parts/popups.css";
+@import "parts/popups-contents.css";
+@import "parts/dialogs.css";
+
+@import "parts/remove-white-flash.css";
+
+/* Platforms */
+@import "platforms/windows.css" screen and (-moz-platform: windows);
+
+/* Extensions support */
+@import "extensions/tab-center-reborn.css" screen and (-moz-bool-pref: "gnomeTheme.extensions.tabCenterReborn");
+
+/* Variables */
+@import "variables.css";
+@import "colors/light.css";
+@import "colors/dark.css";
+@import "colors/black.css" screen and (-moz-bool-pref: "gnomeTheme.oledBlack"); 
+
+/* Optional */
+@import "system-icons.css" screen and (-moz-bool-pref: "gnomeTheme.systemIcons");
+@import "symbolic-tab-icons.css" screen and (-moz-bool-pref: "gnomeTheme.symbolicTabIcons");
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Set theme version text in customization panel */
+#customization-footer::before {
+	background: url(../icon.svg) no-repeat;
+	background-size: contain;
+	content: "Firefox GNOME theme v135";
+	padding: 9px 9px 9px 50px;
+}

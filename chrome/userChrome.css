@@ -1,0 +1,66 @@
+@import "firefox-gnome-theme/userChrome.css";
+#TabsToolbar {
+visibility: collapse !important;
+}
+#sidebar-header {
+visibility: collapse !important;
+}
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        --newtab-background-color: var(--gnome-window-background) !important;
+        --newtab-background-color-secondary: var(--gnome-menu-background) !important;
+        --newtab-primary-action-background: var(--gnome-accent) !important;
+        background: url('elden.jpg') !important;
+    }
+    .search-wrapper input {
+        background: rgba(56, 56, 56, 0.41) var(--newtab-search-icon) 16px center no-repeat !important;
+        border-radius: 30px !important;
+    }
+    .search-wrapper {
+        padding: 4px 0 38px !important;
+    }
+    @media (min-width: 1122px) {
+        main {
+            width: -moz-available !important;
+        }
+    }
+    .logo-and-wordmark-wrapper {
+        display: none !important;
+    }
+    .card-preview-image-outer {
+        display: none !important;
+    }
+    .compact-cards .card-outer {
+        height: 0 !important;
+    }
+    .compact-cards .card-outer .card-preview-image-outer {
+        height: 0 !important;
+    }
+    .card-outer .card-context {
+        display: none !important;
+    }
+    .top-site-outer .top-site-inner > a {
+        padding: 10px 16px 10px !important;
+        display: flex !important;
+    }
+    .top-site-outer {
+        width: fit-content !important;
+    }
+    .top-site-outer .tile {
+        display: hidden !important;
+        height: 30px !important;
+        width: 30px !important;
+        padding-top: 0px !important;
+    }
+    .top-site-outer .title {
+        padding-left: 13px !important;
+    }
+    .top-site-outer .tile .icon-wrapper {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .top-site-outer .title:not(.sponsored) .sponsored-label {
+        display: none !important;
+    }
+}
+

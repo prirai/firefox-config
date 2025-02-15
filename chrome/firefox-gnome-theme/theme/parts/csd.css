@@ -1,0 +1,134 @@
+/* GNOME CSD styles for headerbar on Firefox */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root[customtitlebar] {
+	/* Headerbar top border corners rounded */
+	&[sizemode="normal"]:not([gtktiledwindow="true"]) #nav-bar {
+		border-radius: env(-moz-gtk-csd-titlebar-radius, 8px) env(-moz-gtk-csd-titlebar-radius, 8px) 0 0 !important;
+	}
+
+	/* Always show nav bar window buttons*/
+	#nav-bar > .titlebar-buttonbox-container {
+		display: flex !important;
+	}
+
+	#toolbar-menubar { 
+		/* Prevent menubar from breaking */
+		&:not([inactive=true]) {
+			height: 30px !important;
+			margin-bottom: 8px;
+		}
+
+		/* Always hide menu bar window buttons*/
+		& > .titlebar-buttonbox-container {
+			display: none !important;
+		}
+	}
+
+	&[inFullscreen] {
+		/* Remove close and minimize buttons from fullscreen buttons */
+		.titlebar-buttonbox-container .titlebar-min,
+		.titlebar-buttonbox-container .titlebar-close {
+			display: none !important;
+		}
+
+		/* Force the restore button to appear regardless of maximize button's status */
+		&:not([inDOMFullscreen]) {
+			.titlebar-buttonbox-container {
+				visibility: visible !important;
+			}
+			.titlebar-restore {
+				display: inherit !important;
+			}
+		}
+	}
+
+	&:not([inFullscreen]) {
+		.titlebar-buttonbox-container {
+			padding: 0 8px;
+		}
+
+		/* Window buttons style */
+		.titlebar-button {
+			background: var(--gnome-button-background) !important;
+			border-radius: 100% !important;
+			height: 24px !important;
+			transition: background var(--gnome-animation-time);
+			width: 24px !important;
+
+			&:not([disabled]):hover {
+				background: var(--gnome-button-hover-background) !important;
+
+				& > .toolbarbutton-icon {
+					background: none !important;
+				}
+			}
+
+			&:not([disabled]):active {
+				background: var(--gnome-button-active-background) !important;
+			}
+
+			&::-moz-window-inactive {
+				filter: opacity(0.5);
+			}
+		}
+	}
+
+	.titlebar-buttonbox-container {
+		align-items: center;
+		padding: 0 3px;
+
+		.titlebar-buttonbox {
+			appearance: none !important;
+			gap: 13px;
+
+			.titlebar-button {
+				appearance: none !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				
+				&:hover > .toolbarbutton-icon {
+					background: none !important;
+				}				
+
+				@media not (-moz-bool-pref: "gnomeTheme.noThemedIcons") {
+					& > .toolbarbutton-icon {
+						appearance: none !important;
+						height: 16px !important;
+						padding: 0 !important;
+						stroke: none !important;
+						width: 16px !important;
+						-moz-context-properties: fill, fill-opacity !important;
+					}
+				}
+
+				@media (-moz-bool-pref: "widget.gtk.non-native-titlebar-buttons.enabled") {
+					&:-moz-lwtheme { /* Override config */
+						& > .toolbarbutton-icon {
+							appearance: auto !important
+						}
+					}
+				}
+			}
+		}
+	}	
+
+	.titlebar-spacer {
+		display: none;
+	}
+}
+
+/* OPTIONAL: Allow draging the window from headerbar buttons */
+@media (-moz-bool-pref: "gnomeTheme.dragWindowHeaderbarButtons") {
+	:root[tabsintitlebar] #nav-bar *,
+	:root[tabsintitlebar] #titlebar .titlebar-button {
+		-moz-window-dragging: drag;
+	}
+	
+	/* Avoid window dragging from urlbar */
+	:root[tabsintitlebar] #nav-bar .urlbar-input-box,
+	:root[tabsintitlebar] #nav-bar .urlbar-input-box * {
+		-moz-window-dragging: no-drag !important;
+	}
+}

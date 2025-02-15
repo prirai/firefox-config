@@ -1,0 +1,261 @@
+/* Buttons */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Hide buttons separator */
+#nav-bar .toolbaritem-combined-buttons separator {
+	display: none !important;
+}
+#appMenu-popup .toolbaritem-combined-buttons toolbarseparator {
+	border: 0 !important;
+}
+
+/* Buttons */
+menulist,
+.customizationmode-button,
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button),
+:root[inFullscreen] .titlebar-button.titlebar-restore,
+link[href="chrome://global/content/elements/moz-button.css"] + button,
+.subviewbutton.panel-subview-footer,
+.panel-footer button,
+#downloadsPanel-mainView .download-state .downloadButton,
+#appMenu-popup .panel-banner-item,
+#appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(#appMenu-fxa-label),
+#context-navigation menuitem,
+.identity-popup-preferences-button:not(#hack),
+.findbar-container toolbarbutton,
+#sidebar-switcher-target,
+#viewButton,
+.close-icon:not(.tab-close-button),
+button.close,
+.menulist-label-box,
+.expander-down, .expander-up,
+.notification-button,
+#identity-popup-security-expander,
+.panel-info-button,
+.panel-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+.searchbar-engine-one-off-item,
+.permission-popup-permission-remove-button,
+.button.connect-device,
+#item-choose button,
+#editBMPanel_newFolderButton,
+.unified-extensions-item-menu-button {
+	-moz-appearance: none !important;
+	align-items: center !important;
+	background-color: var(--gnome-button-background) !important;
+	border-radius: 6px !important;
+	border: 0 !important;
+	color: var(--gnome-window-color) !important;
+	font: menu !important;
+	font-weight: bold !important;
+	height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
+	outline: 0 !important;
+	padding: 0 1px !important;
+	transition: background var(--gnome-animation-time);	
+	-moz-box-align: center !important;	
+
+	&:not([disabled="true"]) {
+		/* Hover buttons */
+		&:hover {
+			outline: 0 !important;
+			background-color: var(--gnome-button-hover-background) !important;
+		}
+		/* Active buttons */
+		&:active, &.active {
+			background-color: var(--gnome-button-active-background) !important;
+		}
+		/* Checked buttons */
+		&[selected], &[checked], &[open] {
+			background-color: var(--gnome-button-checked-background) !important;
+			
+			&:hover {
+				background-color: var(--gnome-button-checked-hover-background) !important;
+			}
+			&:active {
+				background-color: var(--gnome-button-checked-active-background) !important;
+			}
+		}
+	}
+
+	/* Disabled buttons */
+	&[disabled="true"] {
+		opacity: 0.5 !important;
+	}
+}
+.subviewbutton-iconic {
+	-moz-box-pack: center !important;
+}
+
+/* Flat Buttons */
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button),
+:root[inFullscreen] .titlebar-button.titlebar-restore,
+link[href="chrome://global/content/elements/moz-button.css"] + button:is([type~="icon"], :has([type~="icon"])),
+.close-icon:not(.tab-close-button),
+button.close,
+.panel-info-button,
+.permission-popup-permission-remove-button,
+.unified-extensions-item-menu-button {
+	background-color: transparent !important;
+	transition: background var(--gnome-animation-time);
+
+	&:not([disabled="true"]) {
+		/* Hover buttons */
+		&:hover {
+			background-color: var(--gnome-hover-color) !important;
+		}
+		/* Active buttons */
+		&:active {
+			background-color: var(--gnome-active-color) !important;
+		}
+		/* Checked buttons */
+		&[selected], &[checked], &[open] {
+			background-color: var(--gnome-selected-color) !important;
+			
+			&:hover {
+				background-color: var(--gnome-selected-hover-color) !important;
+			}
+			&:active {
+				background-color: var(--gnome-selected-active-color) !important;
+			}
+		}
+	}
+
+	/* Disabled buttons */
+	&[disabled="true"] {
+		opacity: 0.3 !important;
+	}
+}
+
+/* Buttons with suggested action */
+#appMenu-popup .panel-banner-item[notificationid="update-restart"],
+button.popup-notification-primary-button:not(#hack),
+#editBookmarkPanelDoneButton,
+#tracking-action-block,
+.button.connect-device {
+	&:not(#hack):not(#hack) {
+		background-color: var(--gnome-button-suggested-background) !important;
+		color: white !important;
+	}
+
+	&:not([disabled="true"]):not(#hack):not(#hack) {
+		&:hover {
+			background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)) !important;
+		}
+		&:active {
+			background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)) !important;
+		}
+	}
+}
+
+/* Buttons with destructive action */
+.panel-footer button#editBookmarkPanelRemoveButton,
+#PanelUI-panic-view-button {
+	background-color: var(--gnome-button-destructive-background) !important;
+	color: var(--gnome-destructive) !important;
+	
+	&:not([disabled="true"]):not(#hack):not(#hack) {
+		&:hover {
+			background-color: var(--gnome-button-destructive-hover-background) !important;
+		}
+		&:active {
+			background-color: var(--gnome-button-destructive-active-background) !important;
+		}
+	}
+}
+
+/* Buttons with margins */
+#nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button),
+.notification-button,
+.subviewbutton.panel-subview-footer:not(:only-of-type),
+.panel-footer button:not(:only-of-type) {
+	margin: 0 3px !important;
+}
+.close-icon:not(.tab-close-button) {
+	margin-left: 6px !important;
+}
+
+/* Text buttons */
+menulist,
+.customizationmode-button,
+#sidebar-switcher-target,
+.subviewbutton.panel-subview-footer,
+.panel-footer button,
+#appMenu-popup .panel-banner-item,
+#appMenu-popup #appMenu-zoomReset-button2:not(#hack),
+#tracking-protection-preferences-button:not(#hack),
+.findbar-container toolbarbutton.findbar-button,
+.notification-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.panel-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > #appMenu-fxa-label2:not(#hack),
+.button.connect-device,
+#item-choose button,
+#editBMPanel_newFolderButton {
+	padding: 2px 9px !important;
+}
+.subviewbutton.panel-subview-footer label,
+.panel-footer button,
+#appMenu-popup .panel-banner-item .toolbarbutton-text,
+#appMenu-popup #appMenu-zoomReset-button2:not(#hack),
+#tracking-protection-preferences-button:not(#hack),
+.findbar-container toolbarbutton.findbar-button,
+.notification-button,
+#PanelUI-panic-view-button,
+.tracking-protection-button,
+.dialog-button,
+.autocomplete-richlistitem[type="loginsFooter"],
+.dialog-button-box button,
+.button.connect-device,
+#item-choose button {
+	text-align: center !important;
+}
+
+/* Circle buttons */
+#downloadsPanel-mainView .download-state .downloadButton,
+.permission-popup-permission-remove-button:not(#hack) {
+	border-radius: 100% !important;
+}
+
+/* Combined buttons */
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:last-of-type):not(#hack),
+#appMenu-popup .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
+#context-navigation menuitem:not(:last-of-type),
+.findbar-container toolbarbutton.findbar-find-previous,
+.findbar-button:not(:last-of-type),
+.search-panel-one-offs .searchbar-engine-one-off-item:not(:last-child),
+.popup-notification-secondary-button:not([dropmarkerhidden="true"]):not(#hack) {
+	border-start-end-radius: 0 !important;
+	border-end-end-radius: 0 !important;
+	border-right-width: 0 !important;
+	margin-inline-end: 0 !important;
+}
+
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:first-of-type):not(#hack),
+#appMenu-popup .toolbaritem-combined-buttons:not(.unified-extensions-item) toolbarbutton:not(:first-of-type):not(#appMenu-fullscreen-button),
+#context-navigation menuitem:not(:first-of-type),
+.findbar-container toolbarbutton.findbar-find-previous,
+.findbar-container toolbarbutton.findbar-find-next,
+.findbar-button:not(:first-of-type),
+.search-panel-one-offs .searchbar-engine-one-off-item:not(:first-child),
+.popup-notification-dropmarker:not(#hack) {
+	border-end-start-radius: 0 !important;
+	border-start-start-radius: 0 !important;
+	margin-inline-start: 0 !important;
+}
+
+#nav-bar .toolbaritem-combined-buttons:not(.unified-extensions-item) {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
