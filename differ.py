@@ -2,9 +2,7 @@ import os
 import re
 
 def extract_key_value(line):
-    # Extract line up to first semicolon
     line_part = line.split(';')[0] + ';'
-    # Extract text between double quotes
     match = re.search(r'(".*?")', line_part)
     if match:
         return match.group(1), line_part
@@ -12,12 +10,14 @@ def extract_key_value(line):
 
 def read_js_file(filepath):
     content_dict = {}
+    lines = []
     with open(filepath, 'r', encoding='utf-8') as file:
         for line in file:
             key, value = extract_key_value(line)
             if key:
                 content_dict[key] = value.strip()
-    return content_dict
+                lines.append((key, value.strip()))
+    return content_dict, lines
 
 def read_blacklist(filepath):
     try:
@@ -28,15 +28,12 @@ def read_blacklist(filepath):
         return []
 
 def main():
-    # Get all JS files in ./out directory
     js_files = []
     for root, dirs, files in os.walk('./out'):
         js_files.extend([os.path.join(root, file) for file in files if file.endswith('.js')])
 
-    # Read blacklist
     blacklist = read_blacklist('./blacklist.txt')
 
-    # Separate user.js and other files
     user_js = None
     other_js_files = []
 
@@ -50,31 +47,29 @@ def main():
         print("user.js not found!")
         return
 
-    # Read user.js content
-    user_content = read_js_file(user_js)
+    user_content, user_lines = read_js_file(user_js)
 
-    # Compare with each other file
+    missing_entries = {}
     for other_file in other_js_files:
-        other_content = read_js_file(other_file)
-
-        # Find differences
-        user_keys = set(user_content.keys())
+        other_content, _ = read_js_file(other_file)
         other_keys = set(other_content.keys())
+        user_keys = set(user_content.keys())
 
-        # Keys in other file but not in user.js
         for key in other_keys - user_keys:
             if not other_content[key] in blacklist:
-                print(f"user.js: <missing>")
-                print(f"{os.path.basename(other_file)}: {other_content[key]}")
-                print()
+                missing_entries[key] = other_content[key]
 
-        # Keys in both but with different values
-        for key in user_keys & other_keys:
-            if user_content[key] != other_content[key]:
-                if not other_content[key] in blacklist:
-                    print(f"user.js: {user_content[key]}")
-                    print(f"{os.path.basename(other_file)}: {other_content[key]}")
-                    print()
+    updated_lines = [line for key, line in user_lines]
+
+    for key, value in missing_entries.items():
+        updated_lines.append(value)
+
+    new_path = os.path.join(os.path.dirname(user_js), 'user.js.new')
+    with open(new_path, 'w', encoding='utf-8') as f:
+        for line in updated_lines:
+            f.write(line + '\n')
+
+    print(f"Updated user.js.new written with {len(missing_entries)} new entries.")
 
 if __name__ == "__main__":
     main()
