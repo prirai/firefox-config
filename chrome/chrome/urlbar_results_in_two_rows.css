@@ -1,0 +1,19 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/urlbar_results_in_two_rows.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Show urlbar results on two lines */
+
+.urlbarView-row-inner{ flex-wrap: wrap !important; }
+
+.urlbarView-no-wrap {
+  max-width: 100% !important;
+  flex-basis: 100%;
+}
+.urlbarView-row[has-url]:not([type="switchtab"]) .urlbarView-title-separator{ display: none }
+
+.urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
+  margin-left: var(--urlbarView-second-line-indent);
+}
+.urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(rtl) {
+  margin-right: var(--urlbarView-second-line-indent);
+}

@@ -1,0 +1,57 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/dark_settings_pages.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Recolors addons manager, preferences page and new about:config */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+@-moz-document url-prefix("about:addons"),
+  url-prefix("about:preferences"),
+  url-prefix("about:config"),
+  url-prefix("chrome://browser/content/"),
+  url-prefix("chrome://mozapps/content/"),
+  url-prefix("chrome://pippki/content/"),
+  url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"){
+    :root,
+    html|html{
+      --in-content-page-color: rgb(210,210,210) !important;
+      --in-content-text-color: rgb(210,210,210) !important;
+      --in-content-page-background: rgb(42,42,46) !important;
+      --in-content-box-background: rgba(255,255,255,0.1) !important;
+      --in-content-deemphasized-text: var(--in-content-text-color) !important;
+      scrollbar-color: var(--in-content-text-color) var(--in-content-page-background) !important;
+      color:var(--in-content-text-color) !important;
+    }
+  
+  menulist > menupopup{ background-color: var(--in-content-page-background) !important; }
+  
+  .updateSettingCrossUserWarningContainer,
+  .info-panel,
+  .extension-controlled,
+  .message-bar,
+  html|message-bar,
+  .alert,
+  treecol{
+    background-color: var(--in-content-box-background) !important;
+    color: var(--in-content-text-color) !important;
+  }
+  .menulist-dropmarker,
+  .checkbox-icon{
+    -moz-context-properties: fill;
+    fill : CurrentColor !important;
+  }
+  /* make panel background blurry if the background is translucent. Requires pref layout.css.backdrop-filter.enabled  */
+  html|panel-list{ backdrop-filter: blur(28px) }
+}
+
+/* Get addons page */
+/* New addons manager doesn't use this anymore */
+@-moz-document url-prefix("https://discovery.addons.mozilla.org/"){
+  html|*{ color: inherit !important; }
+  html|html,html|body{
+    background-color: rgb(46,54,69) !important;
+    color: rgb(210,210,210) !important;
+  }
+  html|div.addon,html|div.Notice{ background-color: rgba(255,255,255,0.1) !important; }
+}

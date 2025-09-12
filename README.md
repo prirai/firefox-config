@@ -3,6 +3,8 @@ Firefox configs for security, privacy, usability and performance
 
 Install UBlock Origin, Sponsorblock, Decentraleyes, PrivacyBadger and Containers (eg. Google container, facebook container).
 
+![](mainimg.jpg)
+
 ## Change user js
 
 You can make firefox fully-suited to your needs and for the maximum security, privacy, usability and performance without very much tweaking by changing the user js in your browser profile.
@@ -22,17 +24,11 @@ The user.js file is taken from various other preexisting projects like arkenfox,
 
 Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://anonymousplanet.org/guide.html#firefox-1)
 
-## Extensions for Themes
 
-- KDE Theme - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-kde/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-- Blue - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-blue/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-- Matte Glow - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-matte-glow/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-- OpenSUSE - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-opensuse/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-
-## Custom UserChrome
+## Custom UserChrome (Browser Styling)
 
 - If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and giving them a try.
-- As an example, I use - https://github.com/rafaelmardojai/firefox-gnome-theme.git along with the sidebery extension which gives a supercharged experience.
+- As an example, I have included a minimal userchrome in the `chrome/` folder above. The browser will then look like the screenshot you see here. Make sure to have vertical tabs turned on in firefox or have a vertical tabs extension like sidebery or tree style tabs.
 
 ## About Config Documentation and other tricks
 
@@ -40,6 +36,13 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 - Flags mentioned in the about:config are largely undocumented. Here's an effort to document most of the flags present. Intial pages are scraped from https://kb.mozillazine.org/ and are present in the `mzpages` directory.
 
 If you really liked this project, star it and also contribute back.
+
+## Extensions for Themes
+
+- KDE Theme - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-kde/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+- Blue - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-blue/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+- Matte Glow - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-matte-glow/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+- OpenSUSE - [Here](https://addons.mozilla.org/en-US/firefox/addon/astitva-opensuse/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 # References
 

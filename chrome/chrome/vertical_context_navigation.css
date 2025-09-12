@@ -1,0 +1,39 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/vertical_context_navigation.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This very likely only works properly on Windows10 */
+/* If this won't work correctly can try the v2 file */
+
+#contentAreaContextMenu{
+  --uc-popup-display: grid;
+  --uc-pseudo-elem: "";
+  --uc-scrollbox-slot: contents;
+  min-height: 162px;
+}
+scrollbox[orient="vertical"]{
+  display: var(--uc-popup-display,inherit);
+  grid-template-columns: auto 1fr; 
+  grid-template-rows: 0;
+}
+scrollbox[orient="vertical"] > slot{
+  display: var(--uc-scrollbox-slot,initial) !important;
+}
+scrollbox[orient="vertical"]::before{
+  content: var(--uc-pseudo-elem,none);
+  grid-area: auto / 2 / auto / 2;
+}
+
+#contentAreaContextMenu menu{ --uc-popup-display: } /* intentionally blank */
+
+#context-navigation{
+  flex-direction: column !important;
+  grid-area: 1 / 1 / auto / 1;
+  min-width: unset !important;
+  align-items: flex-start;
+}
+#context-navigation > .menuitem-iconic{ width: unset !important; }
+#context-navigation .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon{
+  width: auto !important;
+}
+#context-sep-navigation{ display: none }
+#context-navigation ~ * { grid-area: auto / 2 / auto / 2; }

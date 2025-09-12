@@ -1,0 +1,77 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/combined_tabs_and_main_toolbars.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Combines tabs toolbar and nav-bar in such a way that opening new tabs will reserve
+   space from nav-bar. Only pinned tabs and the selected tab will be visible, all other tabs need to be accessed via alltabs-button or shortcut keys */
+
+/* You WILL NEED either autohide_menubar.css or overlay_menubar.css with this or use custom css that does something similar */  
+
+#navigator-toolbox{
+  --uc-urlbar-min-width: 50vw; /* minimum width for opened urlbar */
+}
+
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container{ display: none !important; }
+#toolbar-menubar{ left:0 }
+
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       -moz-pref("userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  #TabsToolbar > .titlebar-buttonbox-container{
+    position: fixed;
+    display: block;
+    left: 0px;
+    z-index: 1;
+  }
+  :root[tabsintitlebar="true"] #nav-bar{ padding-inline: calc(var(--uc-hide-window-control-space,1) * 96px + 30px) 0px !important; }
+  
+  @media (-moz-platform: windows-win10){
+    :root[tabsintitlebar="true"] #nav-bar{ padding-left: calc(var(--uc-hide-window-control-space,1) * 134px + 20px) !important; }
+  }
+  #toolbar-menubar[autohide="true"] + #TabsToolbar .titlebar-buttonbox{ flex-direction: row-reverse }
+}
+
+#navigator-toolbox{ --tab-min-height: 40px }
+:root[uidensity="compact"] #navigator-toolbox{ --tab-min-height: 32px }
+
+#navigator-toolbox{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+#urlbar-container{
+  max-height: var(--urlbar-container-height);
+  align-self: center;
+}
+#titlebar{
+  -moz-appearance: none !important;
+  flex-grow: 1;
+}
+.tab-close-button{
+  padding-inline-start: 6px !important;
+  width: 24px !important;
+}
+.scrollbox-clip[orient="horizontal"]{
+  contain: none !important;
+}
+:root[tabsintitlebar="true"] #nav-bar{ padding-left: 20px }
+
+#nav-bar,
+#PersonalToolbar{ flex-grow: 1000; }
+
+/* reduce urlbar minimum width. If urlbar would become narrower then main-toolbar wraps to second line */
+#urlbar-container{ min-width: 250px !important; }
+
+#TabsToolbar > .titlebar-spacer[type="pre-tabs"]{ display: none !important; }
+
+.tabbrowser-tab{ margin-inline-start: 0 !important }
+
+/* Make opened urlbar overlay the toolbar */
+#urlbar[open]:focus-within{ min-width: var(--uc-urlbar-min-width,none) !important; }
+
+/* Set this pref if you want unpinned tabs to become hidden unless selected */
+@media (-moz-bool-pref: "userchrome.hide-unpinned-tabs.enabled"),
+       -moz-pref("userchrome.hide-unpinned-tabs.enabled"){
+  #alltabs-button{ display: flex !important }
+  .tabbrowser-tab:not([pinned]):not([selected]){ visibility: collapse }
+}

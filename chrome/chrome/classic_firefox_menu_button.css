@@ -1,0 +1,70 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/classic_firefox_menu_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the main menu button appear in the top left corner styled similarly to Firefox versions 4 to 29 */
+
+#PanelUI-button{
+   /* Nightly colors scheme */
+  /*--uc-fx-button-color: #9752fa;
+  --uc-fx-button-sec-color: #00b2fa8a;*/
+   
+  /* Release color scheme*/
+  --uc-fx-button-color: #ff8313;
+  --uc-fx-button-sec-color: #ffdfbf85;
+}
+
+#PanelUI-button{
+  order: -1;
+  margin-inline: 2px var(--uc-window-drag-space-pre,24px) !important;
+}
+:root:is([tabsintitlebar],[customtitlebar]) #nav-bar{
+  border-left-width: 0px;
+  padding-left: 0px !important;
+}
+#PanelUI-menu-button{
+  align-items: start;
+}
+#PanelUI-menu-button > stack{
+  background-color: var(--uc-fx-button-color);
+  background-image: linear-gradient(var(--uc-fx-button-sec-color), transparent) !important;
+  list-style-image: url(chrome://global/skin/icons/arrow-down-12.svg) !important;
+  border-radius: 0 0 4px 4px !important;
+  border: 1px groove black;
+  outline: 1px solid #cdd8e4;
+  border-top: none;
+  display: flex;
+  padding: 4px 10px !important;
+}
+
+#PanelUI-menu-button:hover > stack,
+#PanelUI-menu-button[open] > stack{
+  background-color: var(--uc-fx-button-color) !important;
+  background-image: linear-gradient(rgba(100,100,150,0.3), transparent) !important;
+}
+
+#PanelUI-menu-button > stack::before{
+  display: flex;
+  content: "Firefox"; /* Change text here */
+  color: white;
+  text-shadow: 0 0 2px black;
+  font-weight: 700;
+  margin-inline-end: 4px;
+}
+
+/* OPTIONAL - move the menu button to top-left corner of the window.
+ * Don't use this if you also use tabs_on_bottom.css
+ */
+
+/*
+#PanelUI-button{
+  position: fixed;
+  display: flex;
+  top: 0;
+}
+
+#toolbar-menubar,
+#toolbar-menubar[autohide="true"] + #TabsToolbar{
+  padding-left: 94px !important;
+}
+
+*/

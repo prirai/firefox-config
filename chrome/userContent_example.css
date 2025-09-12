@@ -4,4 +4,3 @@
 /* @import url(content/limit_css_data_leak.css); */ /* Could induce site problems */
 @import url(content/newtab_background_color.css);
 @import url(content/transparent_reader_toolbar.css);
-@import url(newtab-reborn/newtab.css);

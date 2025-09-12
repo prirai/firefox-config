@@ -1,0 +1,67 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/proton_dark_light_notifications.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes web notifications use dark/light theme based on your selected theme, and makes them fit a bit better to rounded proton style. */
+
+@-moz-document url("chrome://global/content/alerts/alert.xhtml") {
+  
+  /* Color scheme definitions
+   * Intentionally let Firefox override these on Windows10
+   */
+  :root{
+    --menu-color: #15141a;
+    --menu-background-color: #f9f9fb;
+    --menu-border-color: #cfcfd8;
+    --menuitem-hover-background-color: #e0e0e6;
+  }
+  @media (-moz-toolbar-prefers-color-scheme:dark) {
+    :root {
+      --menu-border-color: #5b5b66;
+      --menu-color: #fbfbfe;
+      --menu-background-color: #2b2a33;
+      --menuitem-hover-background-color: #52525e;
+    }
+    #alertSourceLabel { color: rgb(5,209,241) !important; }
+  }
+  
+  /* The line below removes background "layer" from the notification on linux, Windows and macOS don't have that layer in the first place */
+  :root{ background: transparent !important; }
+  
+  /* Make Firefox actually use the colors set above */
+  #alertBox {
+    color: var(--menu-color) !important;
+    background-color: var(--menu-background-color) !important;
+    border-color: var(--menu-border-color) !important;
+    border-radius: 6px !important;
+    -moz-window-shadow: cliprounded !important;
+  }
+  #alertSettings {
+    fill: currentColor !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+    margin-bottom: -4px !important;
+  }
+  .close-icon,
+  #alertSettings {
+    background: transparent !important
+  }
+  .close-icon:hover > .toolbarbutton-icon,
+  #alertSettings:is(:hover,[open]) > .button-box > .box-inherit {
+    background-color: var(--menuitem-hover-background-color);
+  }
+  
+  /* Reshape and move the buttons a bit */
+  .close-icon > .toolbarbutton-icon,
+  #alertSettings > .button-box > .box-inherit {
+    border-radius: 4px !important;
+    padding: 2px !important;
+    margin: 2px 2px -2px 0 !important;
+  }
+  #alertSettings > .button-box > .box-inherit {
+    margin: -4px 4px 3px 0 !important;
+  }
+  #alertSettings > .button-box > .box-inherit > .button-icon {
+    padding: 1px;
+  }
+}

@@ -1,0 +1,49 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/multi_column_addons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes addon manager show addons in 2-4 columns based on available width */
+/* You can use compact_addons_manager.css with this to make things even more, well, compact  */
+/* Compatible with addon_manage_buttons_without_popup.css */
+
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
+  
+  :root{  overflow-x: hidden } /* Remove this if it causes horizontal scrolling problems */
+  
+  @media (min-width:720px){
+    #main{ max-width: unset !important; padding-right: 28px; }
+    addon-list > section,
+    recommended-addon-list{
+      padding: 1em;
+      display: grid;
+      grid-template-areas: "hd hd" "cd cd";
+      grid-auto-columns: 1fr;
+      column-gap: 1em;
+     
+    }
+  
+    addon-card .card-contents{ width: unset !important; white-space: initial !important; }
+  
+    .card-heading-image{ max-width: calc(100% + 32px) }
+    section > h2{ grid-area: hd }
+    addon-card{
+      padding-bottom: 0px !important;
+      padding-top: 0px !important;
+      grid-area: auto;
+    }
+    addon-card .addon-description{ max-height: 3em; scrollbar-width: thin; }
+  }
+  
+  @media (min-width:1220px){
+    addon-list > section,
+    recommended-addon-list{
+      grid-template-areas: "hd hd hd" "cd cd cd";
+    }
+  }
+  
+  @media (min-width:1720px){
+    addon-list > section,
+    recommended-addon-list{
+      grid-template-areas: "hd hd hd hd" "cd cd cd cd";
+    }
+  }
+}

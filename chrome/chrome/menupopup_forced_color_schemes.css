@@ -1,0 +1,23 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/menupopup_forced_color_schemes.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This only works on Windows10 when the proton-style context menus are used.
+ * Purpose of this style is to force either dark or light version of menus
+ * regardless of the Firefox theme you have.
+ * This does NOTHING unless you go to about:config and create a new number pref
+ * "userchrome.menupopups.color-scheme"
+ *
+ * 0 = dark
+ * 1 = light
+ */
+
+@media -moz-pref("userchrome.menupopups.color-scheme",0){
+  menupopup{
+    color-scheme: dark !important;
+  }
+}
+@media -moz-pref("userchrome.menupopups.color-scheme",1){
+  menupopup{
+    color-scheme: light !important;
+  }
+}

@@ -1,0 +1,58 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/content/addon_manage_buttons_without_popup.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Show addon management buttons without opening popup */
+
+
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html"), url("about:addons"){
+ 
+  .addon-card-message{ margin-bottom: 0px !important; margin-top: 0px !important; }
+  .card.addon{ padding-bottom: 0px !important; }
+  
+  addon-card .addon-card-collapsed{ display: grid !important; grid-template-areas: "ic con" "op op"; grid-template-columns: 48px auto }
+  addon-card .card-contents{ width: initial !important; white-space: initial !important; }
+  
+  .more-options-menu{ position: static !important; grid-area: op; margin: 0 !important; }
+  .card-contents{ grid-area: con }
+  .card-heading-icon{ grid-area: ic }
+  
+  plugin-options > panel-list,
+  addon-options > panel-list{
+    position: static !important;
+    display: flex !important;
+    padding: 0 !important;
+    margin: 0px calc(0px - var(--card-padding)) !important;
+    border-width: 1px 0 0 0  !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: rgba(127,127,127,0.1) !important;
+    backdrop-filter: none !important; /* Having a backdrop-filter leads to some unexpected layering issues */
+  }
+  
+  button[role="menuitem"]{ padding-inline-start: 30px !important; background-position-x: 8px !important; }
+  
+  .arrow,
+  .more-options-menu > .more-options-button,
+  .addon-name-container > .more-options-button,
+  panel-item[action="expand"]{ display: none !important }
+
+  div.list{ display: inherit !important; flex-direction: row !important; } 
+  
+  panel-item[action="toggle-disabled"]{ --icon: url("chrome://browser/skin/quit.svg") }
+  panel-item[action="preferences"]{ --icon: url("chrome://global/skin/icons/settings.svg") }
+  
+/* Uncomment these if you want to hide button label - such as with compact_addons_manager */
+/* This is basically a requirement with compact_addons_manager.css because the button text causes the cards to overflow */
+/*
+ button[role="menuitem"] > slot{ display: none !important; }
+ link+button[role="menuitem"]{
+    position: static !important;
+    height: 30px !important;
+    min-width: 30px;
+    padding-inline-end: 4px !important;
+  }
+  button[role="menuitem"] > label:not([accesskey]),
+  link+button::after{ display: none !important; }
+*/
+}
+

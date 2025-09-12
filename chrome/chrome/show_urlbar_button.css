@@ -1,0 +1,75 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/show_urlbar_button.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style hides urlbar, but instead shows a button that shows the urlbar when clicked, technically the button is the urlbar - just styled to look like a button. Urlbar also gets shown when it is focused by e.g. Ctrl+L */
+
+#wrapper-urlbar-container,
+#urlbar-container{
+  flex-grow: 0 !important;
+  width: 34px !important;
+  position: static !important;
+}
+:root[customizing] #urlbar-container{
+  min-width: 60px;
+}
+#urlbar{
+  contain: inline-size;
+  width: 34px !important;
+}
+#urlbar:focus-within{
+  width: 70vw !important;
+  z-index: 1;
+  inset-inline: 15vw !important;
+}
+:root:not([customizing]) #urlbar:not(:focus-within) > #urlbar-background{
+  background: transparent !important;
+  border-color: transparent !important;
+}
+:root:not([customizing]) #urlbar:not(:focus-within):hover > #urlbar-background{
+  background: var(--toolbarbutton-hover-background) !important;
+}
+#urlbar:not(:focus-within) #page-action-buttons,
+#urlbar:not(:focus-within) #identity-box,
+.urlbar-input-container:not(:focus-within){
+  display: grid;
+}
+:where(#urlbar):not(:focus-within) #page-action-buttons > *,
+:where(#urlbar):not(:focus-within) #identity-box > *,
+.urlbar-input-container:not(:focus-within) > *{
+  grid-area: 1/1;
+  opacity: 0;
+  pointer-events: none;
+}
+.urlbar-input-container:not(:focus-within){
+  background-image: url("chrome://devtools/skin/images/tool-webconsole.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--toolbar-color);
+  fill: light-dark(rgb(91, 91, 102), rgb(251, 251, 254));
+  -moz-context-properties: fill;
+}
+:root[lwtheme] .urlbar-input-container:not(:focus-within){
+  fill: var(--toolbarbutton-icon-fill);
+}
+.urlbar-input-box.urlbar-input-box{
+  opacity: 1;
+  width: 100%;
+  pointer-events: auto;
+}
+#urlbar:not(:focus-within) #identity-icon-label{
+  display: none;
+}
+#page-action-buttons > [open],
+#identity-box > [open],
+.urlbar-input-container:not(:focus-within) > :has([open]){
+  opacity: 1;
+  background-color: var(--toolbar-bgcolor);
+}
+#urlbar-input:not(:focus-within){
+  opacity: 0;
+  cursor: default;
+}
+/* Make flexible spaces have unlimited width so that they can claim empty space that urlbar would normally claim */
+#nav-bar-customization-target > toolbarspring{
+  max-width: none !important;
+}

@@ -1,0 +1,22 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/grid_overflow_menu.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes the contents of the overflow menu appear in a three column grid */
+/* Hides button labels */
+
+#widget-overflow-mainView{ min-width: 80px !important; }
+
+#widget-overflow-fixed-list{
+  display: grid;
+  grid-template-areas: "s s s" "a a a";
+  grid-auto-columns: auto;
+}
+
+#widget-overflow-mainView[visible] #widget-overflow-fixed-list { max-width: 110px }
+#widget-overflow-mainView ~ panelview[visible]{ max-width: unset !important; } 
+
+#widget-overflow-fixed-list > *{ padding-block: 8px !important; }
+#widget-overflow-fixed-list > #search-container{ grid-area: s }
+
+#widget-overflow-mainView #widget-overflow-fixed-list .subviewbutton-nav::after,
+#widget-overflow-mainView #widget-overflow-fixed-list .toolbarbutton-text{ display: none }

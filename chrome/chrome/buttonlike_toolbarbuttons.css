@@ -1,0 +1,119 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/buttonlike_toolbarbuttons.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style makes buttons look like real buttons with border and background. Color of border and background use the same colors as unselected urlbar to make them fit together. */
+
+:root{
+  --uc-toolbarbutton-vertical-padding: var(--toolbarbutton-inner-padding);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 10px);
+  --toolbarbutton-border-radius: 3px !important;
+}
+:root[uidensity="compact"]{
+  --uc-toolbarbutton-vertical-padding: calc(var(--toolbarbutton-inner-padding) - 1px);
+  --uc-toolbarbutton-horizontal-padding: calc(var(--toolbarbutton-inner-padding) + 6px);
+}
+
+.browser-toolbar{
+  --toolbarbutton-icon-fill: var(--toolbar-field-color);
+}
+
+/* size of buttons */
+
+findbar toolbarbutton,
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack{
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
+  width: calc(2* var(--uc-toolbarbutton-horizontal-padding) + 16px) !important;
+  height: calc(2* var(--uc-toolbarbutton-vertical-padding) + 16px) !important;
+  fill-opacity: 0.8;
+  margin-inline: 2px;
+}
+
+.toolbarbutton-1.toolbarbutton-combined > :is(.toolbarbutton-icon,.toolbarbutton-badge-stack){
+  margin-inline: 0 !important;
+  border-radius: 0 !important;
+  border-inline-end-width: 0 !important;
+}
+.toolbarbutton-1.toolbarbutton-combined:first-child > :is(.toolbarbutton-icon,.toolbarbutton-badge-stack){
+  border-top-left-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-left-radius: var(--toolbarbutton-border-radius) !important;
+}
+.toolbarbutton-1.toolbarbutton-combined:last-child > :is(.toolbarbutton-icon,.toolbarbutton-badge-stack){
+  border-top-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-bottom-right-radius: var(--toolbarbutton-border-radius) !important;
+  border-inline-end-width: 1px !important;
+}
+
+.toolbarbutton-1.toolbarbutton-combined-buttons-dropmarker > .toolbarbutton-icon{
+  padding-inline: 3px !important;
+  margin-inline: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  width: revert !important;
+}
+
+/* borders */
+findbar toolbarbutton,
+.toolbarbutton-1 > .toolbarbutton-icon{
+  border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.55));
+}
+
+/* stacks use box-shadow as a border to prevent size from changing */
+.toolbarbutton-1 > .toolbarbutton-badge-stack{
+  box-shadow: inset 0 0 0 1px var(--toolbar-field-border-color, hsla(240,5%,5%,.55));
+}
+
+/* modify paddings within buttons */
+.toolbarbutton-1 > .toolbarbutton-icon,
+.toolbarbutton-1 > .toolbarbutton-badge-stack{
+  padding: var(--uc-toolbarbutton-vertical-padding) var(--uc-toolbarbutton-horizontal-padding) !important;
+}
+
+/* Remove styles from buttons inside extensions and overflow menu */
+:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-icon,
+:is(#unified-extensions-panel,.widget-overflow-list) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+.widget-overflow-list .toolbarbutton-text{
+  background-color: transparent !important;
+  width: revert !important;
+  height: revert !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Special cases */
+
+#tabs-newtab-button > .toolbarbutton-icon{
+  background-color: transparent;
+}
+.webextension-browser-action{
+  background: transparent !important;
+}
+#zoom-reset-button > .toolbarbutton-text{
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
+  border: 1px solid var(--toolbar-field-border-color, hsla(240,5%,5%,.55));
+  border-right-width: 0;
+  border-radius: 0 !important;
+}
+findbar toolbarbutton{
+  background-color: var(--input-bgcolor,var(--toolbarbutton-bgcolor));
+}
+
+#profiler-button-button:not(.profiler-active) > image{
+  border-radius: 0 var(--toolbarbutton-border-radius) var(--toolbarbutton-border-radius) 0 !important;
+  border-inline-width: 0 1px !important;
+}
+#tabs-newtab-button > .toolbarbutton-icon{
+  width: revert !important;
+  height: revert !important;
+  border: revert !important;
+  padding: var(--toolbarbutton-inner-padding) !important;
+}
+findbar toolbarbutton{
+  padding-inline: var(--uc-toolbarbutton-horizontal-padding) !important;
+  height: revert !important;
+  margin-inline: 1px 0px !important;
+  border-width: 1px !important;
+}
+.findbar-closebutton{
+  margin-inline-end: 8px !important;
+}

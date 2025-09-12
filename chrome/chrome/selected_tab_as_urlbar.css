@@ -1,0 +1,119 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/selected_tab_as_urlbar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This is a horrible hack and absolutely requires click_selected_tab_to_focus_urlbar.css to work. In general it's pertty bad, but meh */
+/* Also, get window_control_placeholder_support.css */
+/* Also hides the nav-bar and shows main menu button next to window controls. And makes the selected tab expand a whole bunch  */
+
+/* Whole bunch of z-indexing */
+
+.urlbar-input-box{ z-index: -1 !important; }
+#urlbar{ z-index: auto !important; }
+#alltabs-button,
+#unified-extensions-button,
+#PanelUI-button,
+#nav-bar-overflow-button{ z-index: 2; position: relative }
+
+.urlbar-input-container{
+  width: calc(100vw - var(--uc-window-control-width) - var(--uc-buttons-width) - 2 * var(--uc-window-drag-space-width) - 76px) !important;
+  left: calc(76px + var(--uc-window-drag-space-width)) !important;
+  pointer-events: none;
+  overflow: visible !important;
+}
+:root:not([customizing]) .urlbar-input-container::before{
+  position: absolute;
+  left: 0;
+  top: 0 !important;
+  height: var(--urlbar-container-height);
+}
+.urlbar-input-container > :not(.urlbar-input-box){ opacity: 0 }
+
+#urlbar-background{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+#urlbar{pointer-events: none !important;}
+#urlbar-container{
+  position: static !important;
+  margin-left: var(--uc-window-control-width) !important;
+}
+#remote-control-box,
+#urlbar-search-button{
+  display: none;
+}
+#tracking-protection-icon-container,
+#identity-box{
+  max-width: 0.1px;
+  padding-inline: 0 !important;
+}
+.urlbarView{
+  background: var(--toolbar-field-focus-background-color);
+  border: 1px solid var(--toolbar-field-focus-border-color) !important;
+  z-index: 1;
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 0 0 26px #444;
+  left:50vw;
+  width: max(70vw,600px) !important;
+  transform: translateX(-50%) !important;
+  pointer-events: auto;
+}
+
+.tabbrowser-tab[selected][fadein]{
+  max-width: 100vw !important;
+  min-width: 200px !important;
+  flex-grow: 300 !important;
+}
+
+#navigator-toolbox:focus-within .tabbrowser-tab[selected] .tab-content{
+  opacity: 0;
+}
+#navigator-toolbox:focus-within .tab-background[selected]{
+  background-image: -moz-element(#urlbar-input) !important;
+  background-position: calc(var(--tab-inline-padding,4px) + 6px) 3px !important;
+  background-color: var(--toolbar-field-focus-background-color) !important;
+  background-size: auto !important;
+}
+:root:not([customizing]) #navigator-toolbox > #TabsToolbar,
+:root:not([customizing]) #titlebar{
+  margin-bottom: calc(0px - var(--tab-min-height) - 2*var(--tab-block-margin));
+}
+
+/* Oh and! also hide other buttons from the nav-bar because why not */
+:root:not([customizing]) #nav-bar-customization-target > :not(#urlbar-container){ visibility: collapse }
+#TabsToolbar > .toolbar-items{
+  margin-right: 104px !important; /* This is space on right side for 3 buttons, menu, overflow and addons */
+  margin-left: 72px !important;
+}
+#unified-extensions-button{
+  visibility: visible !important;
+}
+#back-button, #forward-button{
+  order: -1;
+  z-index: 2;
+  visibility: visible !important;
+}
+
+/* By default this style moves your back and forward buttons to the left edge of the navbar and adds a placeholder space for them.
+   Set the following pref to false to disable that behavior */
+@media (-moz-bool-pref: "userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"),
+       -moz-pref("userchrome.selected-tab-as-urlbar.nav-buttons-space.disabled"){
+  #TabsToolbar > .toolbar-items{ margin-left: 0px !important; }
+  #nav-bar-customization-target{ margin-left: 0px !important; }
+  #back-button, #forward-button{
+    order: auto;
+    z-index: auto;
+  }
+} 
+ 
+#nav-bar{ 
+  height: calc(var(--tab-min-height) + 2*var(--tab-block-margin));
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+:root:is([tabsintitlebar],[customtitlebar]) #titlebar:has(> [autohide="false"]) + #nav-bar{
+  border-inline-width: 0 !important;
+}

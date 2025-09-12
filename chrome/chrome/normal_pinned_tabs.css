@@ -1,0 +1,37 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/normal_pinned_tabs.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Makes pinned tabs behave like normal tabs, making their title and close buttons visible and making them "non-positioned" when tab strip is overflowing */
+
+#tabbrowser-tabs{ padding-inline-start: 0px !important }
+
+.tabbrowser-tab{
+  flex-grow: 100;
+  max-width: 225px;
+  min-width: var(--tab-min-width);
+  width: 0;
+  transition: min-width 100ms ease-out, max-width 100ms ease-out;
+  margin-inline-start: 0px !important;
+  position: initial !important;
+  display: flex !important
+}
+.tab-content{ min-width: 0 }
+.tab-label-container[textoverflow]{
+  mask-image: linear-gradient(to left, transparent, black var(--tab-label-mask-size));
+}
+.tabbrowser-tab[pinned] > .tab-stack{ border: none !important; }
+.tabbrowser-tab[pinned]::after{ position: static !important; margin-block: 0px 1px !important; }
+
+.tabbrowser-tab[selected]{ position: relative !important; }
+
+.tab-label-container{ width: unset !important; }
+.tab-label-container[pinned]{ margin-inline-start: 8px }
+
+.tab-icon-sound:is([soundplaying],[muted],[activemedia-blocked],[pictureinpicture]),
+
+.tab-icon-overlay{ display: none !important; }
+
+#tabbrowser-tabs[closebuttons="activetab"] > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-content > .tab-close-button:not([selected]){ display: none !important; }
+
+/* Comment out or remove this if you want pinned tabs to never have close-button */
+.tab-close-button{ display: flex !important; }
