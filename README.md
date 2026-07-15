@@ -27,8 +27,23 @@ Refer to this guide - [The Hitchhiker’s Guide to Online Anonymity](https://ano
 
 ## Custom UserChrome (Browser Styling)
 
-- If you also want to change the appearance of Firefox to give it a look you prefer, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and giving them a try.
-- As an example, I have included a minimal userchrome in the `chrome/` folder above. The browser will then look like the screenshot you see here. Make sure to have vertical tabs turned on in firefox or have a vertical tabs extension like sidebery or tree style tabs.
+If you also want to change the appearance of Firefox, you can try searching for some userchrome projects on [GitHub](https://github.com/search?q=firefox%20userchrome&type=repositories) or elsewhere and giving them a try. The `chrome/` folder in this repo contains a minimal `userChrome.css` that works with the [firefox-csshacks](https://github.com/MrOtherGuy/firefox-csshacks) styles — see the section below for setup instructions.
+
+### Using firefox-csshacks
+
+You can also use the [firefox-csshacks](https://github.com/MrOtherGuy/firefox-csshacks) repo for a wide variety of CSS styles. To set it up alongside this config:
+
+1. Open a terminal and `cd` into your Firefox profile folder (see the "Change user js" section above for the profile location).
+2. If you already have a `chrome` folder, rename it before cloning. After cloning, copy the contents of the old folder into the new `chrome` folder.
+3. Clone the repository into the `chrome` folder:
+
+       git clone https://github.com/MrOtherGuy/firefox-csshacks.git chrome
+
+4. (Optional) Copy `userChrome_example.css` to `userChrome.css` and `userContent_example.css` to `userContent.css` inside the `chrome` folder.
+5. `@import` individual style files into your `userChrome.css`. All `@import` statements must be placed before anything else in the file. Check `userChrome_example.css` for how it uses `@import`.
+6. Restart Firefox for the changes to take effect.
+
+Afterwards, run `git pull` inside the `chrome` folder to update to the latest styles. `git pull` will not overwrite your `userChrome.css` or `userContent.css`, so you can safely add custom rules to those files.
 
 ## About Config Documentation and other tricks
 
