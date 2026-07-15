@@ -1,9 +1,0 @@
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/pinned_tabs_on_right.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-/* Show pinned tabs on right side of normal tabs */
-
-#pinned-tabs-container[orient="horizontal"]{
-  order: 1;
-  margin-inline: 12px 0 !important;
-}
